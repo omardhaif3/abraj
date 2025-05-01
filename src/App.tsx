@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,6 +8,28 @@ import Philosophy from './components/Philosophy';
 import Partners from './components/Partners';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsappButton from './components/WhatsappButton';
+
+function AppContent() {
+  const { isRTL } = useLanguage();
+
+  // Determine position class based on direction
+  const positionClass = isRTL ? 'left-6' : 'right-6';
+
+  return (
+    <div className="font-sans relative">
+      <Navbar />
+      <Hero />
+      <About />
+      <Work />
+      <Philosophy />
+      <Partners />
+      <Contact />
+      <Footer />
+      <WhatsappButton className={positionClass} />
+    </div>
+  );
+}
 
 function App() {
   // Update the document title
@@ -17,16 +39,7 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="font-sans">
-        <Navbar />
-        <Hero />
-        <About />
-        <Work />
-        <Philosophy />
-        <Partners />
-        <Contact />
-        <Footer />
-      </div>
+      <AppContent />
     </LanguageProvider>
   );
 }

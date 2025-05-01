@@ -21,27 +21,19 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative h-screen overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-blue/90 to-purple-900/90 z-10"></div>
-        <video 
-          className="absolute inset-0 w-full h-full object-cover" // This class handles responsive scaling
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+      <div className="absolute inset-0 bg-gradient-to-br from-dark-blue/90 to-secondary/36 z-10"></div>
+        <img
+          src="/src/assets/images/mainPhoto.jpg"
+          alt="Hero"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.7)' }}
-        >
-          {/* Corrected path relative to the public folder */}
-          <source 
-            src="/videos/videoplayback.mp4" 
-            type="video/mp4" 
-          />
-        </video>
+        />
       </div>
       
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-        <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isRTL ? 'font-cairo' : ''}`}>
-          Plan <span className="text-purple-400">Eight</span>
-        </h1>
+        {/* <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isRTL ? 'font-cairo' : ''}`}>
+          Plan <span className="text-secondary">Eight</span>
+        </h1> */}
         
         <div className="h-20">
           <p 
@@ -53,7 +45,7 @@ const Hero: React.FC = () => {
           </p>
           
           <p 
-            className={`text-lg md:text-xl text-purple-300 transition-all duration-1000 transform ${
+            className={`text-lg md:text-xl text-secondary transition-all duration-1000 transform ${
               showSlogan2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${isRTL ? 'font-cairo' : ''}`}
           >
@@ -63,7 +55,7 @@ const Hero: React.FC = () => {
         
         <a 
           href="#about" 
-          className={`mt-12 px-8 py-3 bg-purple-700 hover:bg-purple-600 rounded-full text-white font-medium transition-all transform hover:scale-105 ${
+          className={`mt-12 px-8 py-3 bg-dark-blue hover:bg-secondary rounded-full text-white font-medium transition-all transform hover:scale-105 ${
             isRTL ? 'font-cairo' : ''
           }`}
         >

@@ -12,12 +12,12 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-8">
-            <Rocket size={32} className="text-purple-400 icon-float hover-rotate" />
+            <Rocket size={32} className="text-green-500 icon-float hover-rotate" />
             <h2 className={`text-4xl font-bold text-white ${isRTL ? 'font-cairo' : ''}`}>
               {isRTL ? (
                 <div className="space-y-2">
-                  <div>خطوة الألف ميل تبدأ بِخُطّة</div>
-                  <div className="text-2xl text-purple-300">ونحن في خطة ثمانية نرسم لك الطريق</div>
+                  <div>مسيرتنا</div>
+                  <div className="text-2xl text-green-500">ونحن في خطة ثمانية نرسم لك الطريق</div>
                 </div>
               ) : (
                 t('about.title')
@@ -33,19 +33,24 @@ const About: React.FC = () => {
           
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Branding', icon: <Palette className="w-8 h-8 icon-spin" />, desc: 'Strategic brand development' },
-              { title: 'UX Design', icon: <MousePointer2 className="w-8 h-8 icon-float" />, desc: 'User-centered experiences' },
-              { title: 'Research', icon: <LineChart className="w-8 h-8 icon-pulse" />, desc: 'Data-driven insights' }
+              { titleKey: 'about.title1', icon: <Palette className="w-8 h-8 icon-spin" />, descKey: 'about.text1' },
+              { titleKey: 'about.title2', icon: <MousePointer2 className="w-8 h-8 icon-float" />, descKey: 'about.text2' },
+              { titleKey: 'about.title3', icon: <LineChart className="w-8 h-8 icon-pulse" />, descKey: 'about.text3' }
             ].map((item, index) => (
               <div 
                 key={index} 
-                className="p-6 bg-purple-900 bg-opacity-30 rounded-xl hover:bg-opacity-40 transition-all transform hover:scale-105 group"
+                className="p-6 bg-white rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 group"
               >
-                <div className="text-purple-300 mb-4 group-hover:text-purple-200 transition-colors">
+                <div className="text-dark-blue mb-4 group-hover:text-green-700 transition-colors">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-purple-200">{item.desc}</p>
+                <h3 className={`text-xl font-semibold text-dark-blue mb-2 ${isRTL ? 'font-cairo' : ''}`}>{t(item.titleKey)}</h3>
+                <p className={`text-dark-blue ${isRTL ? 'font-cairo' : ''}`}>{t(item.descKey).split('\n').map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ))}</p>
               </div>
             ))}
           </div>

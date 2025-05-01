@@ -12,23 +12,34 @@ const translations: Translations = {
     
     // Home
     'home.learnMore': 'Learn More',
-    'home.slogan1': 'Plan Eight draws your path.',
-    'home.slogan2': 'Stimulating perception with thoughtful creativity.',
+    'home.slogan1': 'With a sharp vision and ambitious outlook, we navigate through every detail to achieve outstanding results with you.',
+    'home.slogan2': ' ',
     
     // About
-    'about.title': 'About Us',
-    'about.text': 'At Plan Eight, we redefine design as a scientific tool driven by analysis and human behavior. We create distinctive brand experiences that resonate with your audience and drive engagement through strategic thinking and creative excellence.',
-    
+    'about.title': 'Our Journey',
+    'about.text': 'Over the past ten years, we have developed our ideas and refined our methodology to always stay at the forefront. We delved deep into the minds of our clients, embodying their personas to see their world as they see it. We understood their ambitions, personalized their goals, and began their journey with us to achieve everything they aspire to.',
+    'about.title1':'Our Vision',
+    'about.text1':'We strive to excel in the world of digital marketing in its holistic concept, based on the highest standards of excellence.',
+    'about.title2':'Our Mission',
+    'about.text2':'To deeply connect with the spirit of our clients, understand their thoughts, define their goals, fulfill their aspirations, and deliver tangible and realistic results.',
+    'about.title3':'Our Values',
+    'about.text3':'Thought \n Creativity \n Commitment \n Quality',
     // Work
-    'work.title': 'Our Work',
+    'work.title': 'Our Services',
     'work.all': 'All',
-    'work.branding': 'Branding',
-    'work.ux': 'UX',
-    'work.research': 'Research',
+    'work.logo': 'Logo Design',
+    'work.post': 'Post Design',
+    // 'work.research': 'Research',
+    'work.habib': 'Habib',
+    'work.like': 'Like Perfume',
+    'work.eumq': 'Eumq',
+    'work.anqura': 'Anqora',
+    'work.kera': 'Back Care',
+    'work.kamry': 'Kmry',
     
     // Philosophy
     'philosophy.title': 'Our Philosophy',
-    'philosophy.text': 'We see limits not as obstacles but as opportunities for reinvention. Our approach combines analytical thinking with creative design to unlock innovative solutions that elevate your brand above the competition.',
+    'philosophy.text': 'We strive to excel in the world of digital marketing in its holistic concept, based on the highest standards of excellence.',
     
     // Partners
     'partners.title': 'Our Partners',
@@ -58,23 +69,33 @@ const translations: Translations = {
     
     // Home
     'home.learnMore': 'اعرف المزيد',
-    'home.slogan1': 'خطوة الألف ميل تبدأ بخطة',
-    'home.slogan2': 'نحفّز الإدراك بالإبداع المدروس',
+    'home.slogan1': 'بنظرة ثاقبة ورؤیة طموحة نبحر في كل،  التفاصیل لنحقق معكم نتائج مبھرة ',
+    'home.slogan2': ' ',
     
     // About
     'about.title': 'من نحن',
-    'about.text': 'في خطة ثمانية، نعيد تعريف التصميم كأداة علمية مدفوعة بالتحليل والسلوك البشري. نحن نخلق تجارب علامات تجارية مميزة تتردد صداها مع جمهورك وتدفع المشاركة من خلال التفكير الاستراتيجي والتميز الإبداعي.',
-    
+    'about.text': 'عشرة سنوات مضت،  طورنا أفكارنا واستحدثنا منھجیتنا لنكون بالمقدمة دائماً ، تسللنا إلى أعماق خبایا تفكیر عملائنا، لننتحل شخصیاتھم فرأینا عالمھم كما كانوا یرونھ، وقرأنا طموحاتھم و شخصنّا أھدافھم، وبدأنا رحلتھم معنا لتحقیق كل ما یطمحون إلیھ . ',
+    'about.title1':' رؤيتنا',
+    'about.text1':'نسعى للتمیز في عالم التسویق الإلكتروني بمفھومھ الشامل، ووفق أعلى المعاییر المثالیة . ',
+    'about.title2':'رسالتنا',
+    'about.text2':'أن نكون روح عملائنا، لنتعمق في أفكارھم، ونحدد أھدافھم، و نحقق تطلعاتھم وآمالھم بنتائج واقعیة ملموسة ',
+    'about.title3':'قيمنا',
+    'about.text3':'الفكر \n الابداع \n الالتزام \n الجودة  ',
     // Work
-    'work.title': 'أعمالنا',
+    'work.title': 'خدماتنا',
     'work.all': 'الكل',
-    'work.branding': 'العلامات التجارية',
-    'work.ux': 'تجربة المستخدم',
-    'work.research': 'البحث',
-    
+    'work.logo': 'تصميم الشعارات',
+    'work.post': 'تصميم بوستات',
+    // 'work.research': 'البحث',
+    'work.habib': 'حبيب للعقارات',
+    'work.like': 'عطورات لايك',
+    'work.eumq': 'عمق',
+    'work.anqura': 'انقورا',
+    'work.kera': 'باك كير',
+    'work.kamry': 'كمري',
     // Philosophy
     'philosophy.title': 'رؤيتنا',
-    'philosophy.text': 'لا نؤمن بالحدود، بل نراها فرصًا لإعادة الابتكار. نهجنا يجمع بين التفكير التحليلي والتصميم الإبداعي لفتح حلول مبتكرة ترفع علامتك التجارية فوق المنافسة.',
+    'philosophy.text': 'نسعى للتمیز في عالم التسویق الإلكتروني بمفھومھ الشامل، ووفق أعلى المعاییر المثالیة.',
     
     // Partners
     'partners.title': 'شركاؤنا',

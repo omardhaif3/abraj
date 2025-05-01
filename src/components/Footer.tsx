@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              Plan <span className="text-purple-400">Eight</span>
+              خطة <span className="text-dark-blue">ثمانية</span>
             </h3>
             <p className={`text-gray-300 mb-4 ${isRTL ? 'font-arabic' : ''}`}>
               {isRTL 
@@ -29,10 +29,10 @@ const Footer: React.FC = () => {
               {isRTL ? 'روابط سريعة' : 'Quick Links'}
             </h4>
             <ul className={`space-y-2 ${isRTL ? 'font-arabic' : ''}`}>
-              <li><a href="#home" className="text-gray-300 hover:text-purple-400 transition-colors">{t('nav.home')}</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-purple-400 transition-colors">{t('nav.about')}</a></li>
-              <li><a href="#work" className="text-gray-300 hover:text-purple-400 transition-colors">{t('nav.work')}</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-purple-400 transition-colors">{t('nav.contact')}</a></li>
+              <li><a href="#home" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.home')}</a></li>
+              <li><a href="#about" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.about')}</a></li>
+              <li><a href="#work" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.work')}</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.contact')}</a></li>
             </ul>
           </div>
           
@@ -43,11 +43,11 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Mail size={18} className="text-purple-400" />
+                <Mail size={18} className="text-dark-blue" />
                 <span className="text-gray-300">hello@reallygreatsite.com</span>
               </li>
               <li className="flex items-center space-x-3 rtl:space-x-reverse">
-                <Phone size={18} className="text-purple-400" />
+                <Phone size={18} className="text-dark-blue" />
                 <span className="text-gray-300">012-1234-567</span>
               </li>
             </ul>

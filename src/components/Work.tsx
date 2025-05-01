@@ -11,12 +11,12 @@ import 'swiper/css/effect-coverflow';
 
 
 const workItems = [
-  { id: 1, title: 'Project Alpha', category: 'branding', image: 'https://images.pexels.com/photos/5926387/pexels-photo-5926387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-  { id: 2, title: 'Project Beta', category: 'ux', image: 'https://images.pexels.com/photos/5849592/pexels-photo-5849592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-  { id: 3, title: 'Project Gamma', category: 'research', image: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-  { id: 4, title: 'Project Delta', category: 'branding', image: 'https://images.pexels.com/photos/6476587/pexels-photo-6476587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-  { id: 5, title: 'Project Epsilon', category: 'ux', image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-  { id: 6, title: 'Project Zeta', category: 'research', image: 'https://images.pexels.com/photos/5696555/pexels-photo-5696555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+  { id: 1, title: 'work.habib', category: 'logo', image: '/src/assets/images/works/logos/الحبيب للعقار/Artboard 2 copy@2x-100.jpg' },
+  { id: 2, title: 'work.like', category: 'logo', image: '/src/assets/images/works/logos/عطور لايك/Artboard 1@2x-100.jpg' },
+  { id: 3, title: 'work.eumq', category: 'logo', image: '/src/assets/images/works/logos/عمق/Artboard 2 copy 4@2x-100.jpg' },
+  { id: 4, title: 'work.anqura', category: 'post', image: '/src/assets/images/works/posts/انقورا/Artboard 1 copy 12-100 (1).jpg' },
+  { id: 5, title: 'work.kera', category: 'post', image: '/src/assets/images/works/posts/باك كير/Artboard 1 copy 3@2x-100.jpg' },
+  { id: 6, title: 'work.kamry', category: 'post', image: '/src/assets/images/works/posts/كمري/Artboard 1@2x-100.jpg' },
 ];
 
 const Work: React.FC = () => {
@@ -30,14 +30,14 @@ const Work: React.FC = () => {
 
   const filters = [
     { id: 'all', label: 'work.all' },
-    { id: 'branding', label: 'work.branding' },
-    { id: 'ux', label: 'work.ux' },
-    { id: 'research', label: 'work.research' }
+    { id: 'logo', label: 'work.logo' },
+    { id: 'post', label: 'work.post' }
+  
   ];
 
   return (
     <section id="work" className="py-24 bg-gray-100">
-      <div className="container mx-auto px-4">
+<div className="max-w-5xl mx-auto px-2">
         <div className="flex items-center justify-center mb-6 space-x-4 rtl:space-x-reverse">
           
           <h2 className={`text-4xl font-bold text-dark-blue ${isRTL ? 'font-cairo' : ''}`}>
@@ -52,8 +52,8 @@ const Work: React.FC = () => {
               onClick={() => setFilter(filterItem.id)}
               className={`px-4 py-2 rounded-full transition-all ${
                 filter === filterItem.id
-                  ? 'bg-purple-700 text-white'
-                  : 'bg-white text-gray-700 hover:bg-purple-100'
+                  ? 'bg-dark-blue text-white'
+                  : 'bg-white text-gray-700 hover:bg-green-100'
               } ${isRTL ? 'font-cairo' : ''}`}
             >
               {t(filterItem.label)}
@@ -61,11 +61,12 @@ const Work: React.FC = () => {
           ))}
         </div>
         
-        <Swiper
+<Swiper
   effect="coverflow"
   grabCursor={true}
   centeredSlides={true}
   loop={true}
+  spaceBetween={10}
   breakpoints={{
     0: {
       slidesPerView: 1.2,
@@ -100,7 +101,7 @@ const Work: React.FC = () => {
     key={item.id}
     className="transition-all duration-300 swiper-slide-custom"
   >  
-      <TiltWrapper className="w-[90%] aspect-square sm:w-full sm:h-96 group">
+<TiltWrapper className="w-[90%] aspect-square sm:w-full sm:h-96 group scale-75 sm:scale-90">
 
       <div className="relative w-full h-full overflow-hidden rounded-lg slide-inner transition-transform duration-300">
   <img
@@ -110,8 +111,8 @@ const Work: React.FC = () => {
   />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end justify-center pb-4 rounded-lg">
             <div className="text-white text-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-              <h3 className="text-lg font-bold">{item.title}</h3>
-              <p className="capitalize text-purple-300">{item.category}</p>
+              <h3 className="text-lg font-bold">{t(item.title)}</h3>
+              <p className="capitalize text-dark-blue">{item.category}</p>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-dark-blue to-purple-900">
+    <section id="contact" className="py-24 bg-gradient-to-br from-dark-blue to-secondary">
       <div className="container mx-auto px-4">
         <h2 className={`text-4xl font-bold mb-12 text-center text-white ${isRTL ? 'font-arabic' : ''}`}>
           {t('contact.title')}
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent ${isRTL ? 'text-right' : ''}`}
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-secondary focus:border-transparent ${isRTL ? 'text-right' : ''}`}
                 />
               </div>
               
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent ${isRTL ? 'text-right' : ''}`}
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-secondary focus:border-transparent ${isRTL ? 'text-right' : ''}`}
                 />
               </div>
               
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent ${isRTL ? 'text-right' : ''}`}
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-secondary focus:border-transparent ${isRTL ? 'text-right' : ''}`}
                 />
               </div>
               
@@ -106,13 +106,13 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent ${isRTL ? 'text-right' : ''}`}
+                  className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-secondary focus:border-transparent ${isRTL ? 'text-right' : ''}`}
                 ></textarea>
               </div>
               
               <button
                 type="submit"
-                className={`w-full py-3 px-6 bg-purple-700 text-white rounded-lg hover:bg-purple-600 transition-colors ${isRTL ? 'font-arabic' : ''}`}
+                className={`w-full py-3 px-6 bg-dark-blue text-white rounded-lg hover:bg-secondary transition-colors ${isRTL ? 'font-arabic' : ''}`}
               >
                 {t('contact.submit')}
               </button>
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
               
               <div className="space-y-6">
                 <div className={`flex items-center space-x-4 rtl:space-x-reverse ${isRTL ? 'font-arabic' : ''}`}>
-                  <div className="bg-purple-600 p-3 rounded-full">
+                  <div className="bg-dark-blue p-3 rounded-full">
                     <Mail size={20} className="text-white" />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className={`flex items-center space-x-4 rtl:space-x-reverse ${isRTL ? 'font-arabic' : ''}`}>
-                  <div className="bg-purple-600 p-3 rounded-full">
+                  <div className="bg-dark-blue p-3 rounded-full">
                     <Phone size={20} className="text-white" />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className={`flex items-center space-x-4 rtl:space-x-reverse ${isRTL ? 'font-arabic' : ''}`}>
-                  <div className="bg-purple-600 p-3 rounded-full">
+                  <div className="bg-dark-blue p-3 rounded-full">
                     <MapPin size={20} className="text-white" />
                   </div>
                   <div>

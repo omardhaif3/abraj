@@ -15,7 +15,7 @@ const Philosophy: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-8">
-            <Lightbulb size={32} className="text-purple-400 icon-pulse hover-bounce" />
+            <Lightbulb size={32} className="text-dark-blue icon-pulse hover-bounce" />
             <h2 className={`text-4xl font-bold text-center text-white ${isRTL ? 'font-cairo' : ''}`}>
               {t('philosophy.title')}
             </h2>
