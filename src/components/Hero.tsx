@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
       <div className="absolute inset-0 bg-gradient-to-br from-dark-blue/90 to-secondary/36 z-10"></div>
         <img
-          src="/src/assets/images/mainPhoto.jpg"
+          src="/images/mainPhoto.jpg"
           alt="Hero"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.7)' }}

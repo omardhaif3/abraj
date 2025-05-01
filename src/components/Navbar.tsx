@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             Plan <span className="text-purple-500">Eight</span>
           </a> */}
           <a href="#" className="block p-1 rounded">
-            <img src="/src/assets/images/Artboard 10@2x.png" alt="Plan Eight" className="h-10 bg-transparent" />
+            <img src="/images/Artboard 10@2x.png" alt="Plan Eight" className="h-10 bg-transparent" />
           </a>
 
           {/* Desktop Navigation */}

@@ -8,9 +8,9 @@ const Partners: React.FC = () => {
   const { isRTL } = useLanguage();
 
   const partners = [
-    { name: 'Qomrh', logo: '/src/assets/images/Partner/1.png' },
-    { name: 'Eumq', logo: '/src/assets/images/Partner/2.png' },
-    { name: 'Idee', logo: '/src/assets/images/Partner/3.png' }
+    { name: 'Qomrh', logo: '/images/Partner/1.png' },
+    { name: 'Eumq', logo: '/images/Partner/2.png' },
+    { name: 'Idee', logo: '/images/Partner/3.png' }
     // { name: 'Intel', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg' },
     // { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
     // { name: 'Nvidia', logo: 'https://upload.wikimedia.org/wikipedia/en/2/21/Nvidia_logo.svg' },

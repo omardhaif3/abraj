@@ -11,12 +11,12 @@ import 'swiper/css/effect-coverflow';
 
 
 const workItems = [
-  { id: 1, title: 'work.habib', category: 'logo', image: '/src/assets/images/works/logos/الحبيب للعقار/Artboard 2 copy@2x-100.jpg' },
-  { id: 2, title: 'work.like', category: 'logo', image: '/src/assets/images/works/logos/عطور لايك/Artboard 1@2x-100.jpg' },
-  { id: 3, title: 'work.eumq', category: 'logo', image: '/src/assets/images/works/logos/عمق/Artboard 2 copy 4@2x-100.jpg' },
-  { id: 4, title: 'work.anqura', category: 'post', image: '/src/assets/images/works/posts/انقورا/Artboard 1 copy 12-100 (1).jpg' },
-  { id: 5, title: 'work.kera', category: 'post', image: '/src/assets/images/works/posts/باك كير/Artboard 1 copy 3@2x-100.jpg' },
-  { id: 6, title: 'work.kamry', category: 'post', image: '/src/assets/images/works/posts/كمري/Artboard 1@2x-100.jpg' },
+  { id: 1, title: 'work.habib', category: 'logo', image: '/images/works/logos/الحبيب للعقار/Artboard 2 copy@2x-100.jpg' },
+  { id: 2, title: 'work.like', category: 'logo', image: '/images/works/logos/عطور لايك/Artboard 1@2x-100.jpg' },
+  { id: 3, title: 'work.eumq', category: 'logo', image: '/images/works/logos/عمق/Artboard 2 copy 4@2x-100.jpg' },
+  { id: 4, title: 'work.anqura', category: 'post', image: '/images/works/posts/انقورا/Artboard 1 copy 12-100 (1).jpg' },
+  { id: 5, title: 'work.kera', category: 'post', image: '/images/works/posts/باك كير/Artboard 1 copy 3@2x-100.jpg' },
+  { id: 6, title: 'work.kamry', category: 'post', image: '/images/works/posts/كمري/Artboard 1@2x-100.jpg' },
 ];
 
 const Work: React.FC = () => {
