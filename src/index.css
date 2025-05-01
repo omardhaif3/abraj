@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+:root {
+  --dark-blue: #003366;
+  --primary-blue: #004594;
+  --secondary: #f5a623;
+  --accent: #00bfa6;
+  --background: #f9fafb;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+html[lang="ar"] body {
+  font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+}
+
+.swiper {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-blue) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary-blue) !important;
+}
+
+/* Icon Animations */
+.icon-spin {
+  animation: spin 20s linear infinite;
+}
+
+.icon-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .8;
+    transform: scale(0.95);
+  }
+}
+
+/* Interactive hover effects */
+.hover-rotate {
+  transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(15deg);
+}
+
+.hover-bounce:hover {
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Aspect ratio utility for work items */
+.aspect-square {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.aspect-square > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* RTL adjustments */
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Transitions for language switch */
+.transition-dir {
+  transition: all 0.3s ease-in-out;
+}
