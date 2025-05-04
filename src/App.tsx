@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -42,7 +42,6 @@ function MainPageContent() {
       <Partners />
       <Contact />
       <Footer />
-      <WhatsappButton className={positionClass} />
     </>
   );
 }
@@ -55,13 +54,25 @@ function App() {
 
   return (
     <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  );
+}
+
+function AppContent() {
+  const { isRTL } = useLanguage();
+  const positionClass = isRTL ? 'left-6' : 'right-6';
+
+  return (
+    <>
       <Routes>
         <Route path="/" element={<MainPageContent />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-    </LanguageProvider>
+      <WhatsappButton className={positionClass} />
+    </>
   );
 }
 

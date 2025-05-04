@@ -15,7 +15,7 @@ const WhatsappButton: React.FC<WhatsappButtonProps> = ({ className = '' }) => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center space-x-2 transition-colors duration-300 ${className}`}
+      className={`fixed bottom-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center space-x-2 transition-colors duration-300 ${className} z-[9999]`}
       aria-label="Chat on WhatsApp"
     >
       <svg

@@ -8,7 +8,6 @@ const Footer: React.FC = () => {
   const t = useTranslation();
   const { isRTL } = useLanguage();
   const location = useLocation();
-  const navigate = useNavigate();
 
   const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (location.pathname === '/about') {
