@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -62,10 +61,16 @@ export default {
         'video': '16 / 9',
       },
       animation: {
+        'ticker': 'ticker 20s linear infinite',
         'fade-in': 'fadeIn 1s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
+        'partnerOrbit': 'spinOrbit 20s linear infinite',
       },
       keyframes: {
+        ticker: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
@@ -74,10 +79,22 @@ export default {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        spinOrbit: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
+      
     },
   },
   plugins: [
+    function({ addBase, theme }) {
+      addBase({
+        '.rtl .animate-ticker': {
+          'animation-direction': 'reverse',
+        },
+      })
+    },
     function ({ addComponents }) {
       addComponents({
         '@media (max-width: 640px)': {
@@ -88,6 +105,4 @@ export default {
       });
     },
   ],
-  
 };
-

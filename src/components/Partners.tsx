@@ -2,6 +2,10 @@ import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
 import { Users } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const Partners: React.FC = () => {
   const t = useTranslation();
@@ -11,9 +15,6 @@ const Partners: React.FC = () => {
     { name: 'Qomrh', logo: '/images/Partner/1.png' },
     { name: 'Eumq', logo: '/images/Partner/2.png' },
     { name: 'Idee', logo: '/images/Partner/3.png' }
-    // { name: 'Intel', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg' },
-    // { name: 'Amazon', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg' },
-    // { name: 'Nvidia', logo: 'https://upload.wikimedia.org/wikipedia/en/2/21/Nvidia_logo.svg' },
   ];
 
   return (
@@ -25,25 +26,58 @@ const Partners: React.FC = () => {
             {t('partners.title')}
           </h2>
         </div>
-
-        <div className="flex justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-center">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="group flex items-center justify-center p-8 bg-white rounded-xl shadow-sm 
-                           transition-all duration-300 transform hover:shadow-xl hover:scale-110 hover:-translate-y-1"
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-20 max-w-[160px] object-contain md:filter md:grayscale transition-all duration-300 md:group-hover:grayscale-0"
-                />
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-center">
+          {partners.map((partner, index) => (
+            <div
+              key={index}
+              className="group flex items-center justify-center p-8 bg-white rounded-xl shadow-sm 
+                         transition-all duration-300 transform hover:shadow-xl hover:scale-110 hover:-translate-y-1"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                loading="lazy"
+                className="h-20 w-auto max-w-[160px] object-contain grayscale md:group-hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
+        </div>
+
+           {/* Mobile Carousel */}
+
+<div className="w-full md:hidden">
+  <div className={isRTL ? 'swiper-rtl' : 'swiper-ltr'}>
+    <Swiper
+      modules={[Autoplay, Pagination]}
+      autoplay={{ delay: 2500, disableOnInteraction: false }}
+      loop={partners.length > 2}
+      pagination={{ clickable: true }}
+      spaceBetween={0}
+      slidesPerView={2} // Make the current slide take up more space, showing parts of neighbors
+      centeredSlides={true} // Keep the current slide centered
+      className="w-full"
+      dir="ltr"
+    >
+      {partners.map((partner, index) => (
+        <SwiperSlide key={index}>
+          <div className=" flex items-center justify-center p-8 bg-white rounded-xl shadow-sm mx-4">
+            <img
+              src={partner.logo}
+              alt={partner.name}
+              loading="lazy"
+              className="h-30 w-auto max-w-[160px] object-contain grayscale transition-all duration-300"
+              style={{ filter: 'none' }}
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</div>
+
     </section>
   );
 };
