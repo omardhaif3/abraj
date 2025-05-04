@@ -43,6 +43,7 @@ const Contact: React.FC = () => {
                 <label 
                   htmlFor="name" 
                   className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.name')}
                 </label>
@@ -61,6 +62,7 @@ const Contact: React.FC = () => {
                 <label 
                   htmlFor="email" 
                   className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.email')}
                 </label>
@@ -79,6 +81,7 @@ const Contact: React.FC = () => {
                 <label 
                   htmlFor="phone" 
                   className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.phone')}
                 </label>
@@ -96,6 +99,7 @@ const Contact: React.FC = () => {
                 <label 
                   htmlFor="message" 
                   className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.message')}
                 </label>

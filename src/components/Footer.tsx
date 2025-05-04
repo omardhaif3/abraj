@@ -2,10 +2,21 @@ import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
 import { Instagram, Twitter, Linkedin, Facebook, Mail, Phone } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const t = useTranslation();
   const { isRTL } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (location.pathname === '/about') {
+      e.preventDefault();
+      // Force reload the page
+      window.location.reload();
+    }
+  };
 
   return (
     <footer className="bg-dark-blue text-white py-12">
@@ -14,7 +25,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              خطة <span className="text-dark-blue">ثمانية</span>
+              {t('footer.agencyName')}
             </h3>
             <p className={`text-gray-300 mb-4 ${isRTL ? 'font-arabic' : ''}`}>
               {isRTL 
@@ -29,10 +40,39 @@ const Footer: React.FC = () => {
               {isRTL ? 'روابط سريعة' : 'Quick Links'}
             </h4>
             <ul className={`space-y-2 ${isRTL ? 'font-arabic' : ''}`}>
-              <li><a href="#home" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.home')}</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.about')}</a></li>
-              <li><a href="#work" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.work')}</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-green-500 transition-colors">{t('nav.contact')}</a></li>
+              <li>
+                <Link to="/#home" className="text-gray-300 hover:text-green-500 transition-colors">
+                  {t('nav.home')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  onClick={handleAboutClick}
+                  className="text-gray-300 hover:text-green-500 transition-colors"
+                >
+                  {t('nav.about')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  onClick={(e) => {
+                    if (location.pathname === '/services') {
+                      e.preventDefault();
+                      window.location.reload();
+                    }
+                  }}
+                  className="text-gray-300 hover:text-green-500 transition-colors"
+                >
+                  {t('nav.work')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-green-500 transition-colors">
+                  {t('nav.contact')}
+                </Link>
+              </li>
             </ul>
           </div>
           

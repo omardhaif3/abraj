@@ -5,7 +5,7 @@ const translations: Translations = {
     // Navigation
     'nav.home': 'Home',
     'nav.about': 'About Us',
-    'nav.work': 'Our Work',
+    'nav.work': 'Our Services',
     'nav.philosophy': 'Our Philosophy',
     'nav.partners': 'Our Partners',
     'nav.contact': 'Contact Us',
@@ -23,7 +23,7 @@ const translations: Translations = {
     'about.title2':'Our Mission',
     'about.text2':'To deeply connect with the spirit of our clients, understand their thoughts, define their goals, fulfill their aspirations, and deliver tangible and realistic results.',
     'about.title3':'Our Values',
-    'about.text3':'Thought \n Creativity \n Commitment \n Quality',
+    'about.text3':'Thought, Creativity, Commitment, and Quality',
     // Work
     'work.title': 'Our Services',
     'work.all': 'All',
@@ -57,12 +57,13 @@ const translations: Translations = {
     
     // Footer
     'footer.copyright': '© Plan Eight 2025. All Rights Reserved.',
+    'footer.agencyName': 'Plan Eight Agency',
   },
   ar: {
     // Navigation
     'nav.home': 'الرئيسية',
     'nav.about': 'من نحن',
-    'nav.work': 'أعمالنا',
+    'nav.work': 'خدماتنا',
     'nav.philosophy': 'رؤيتنا',
     'nav.partners': 'شركاؤنا',
     'nav.contact': 'تواصل معنا',
@@ -80,7 +81,7 @@ const translations: Translations = {
     'about.title2':'رسالتنا',
     'about.text2':'أن نكون روح عملائنا، لنتعمق في أفكارھم، ونحدد أھدافھم، و نحقق تطلعاتھم وآمالھم بنتائج واقعیة ملموسة ',
     'about.title3':'قيمنا',
-    'about.text3':'الفكر \n الابداع \n الالتزام \n الجودة  ',
+    'about.text3':'الفكر، الابداع، الالتزام، والجودة  ',
     // Work
     'work.title': 'خدماتنا',
     'work.all': 'الكل',
@@ -113,6 +114,7 @@ const translations: Translations = {
     
     // Footer
     'footer.copyright': '© خطة ثمانية 2025. جميع الحقوق محفوظة.',
+    'footer.agencyName': 'وكالة خطة ثمانية',
   }
 };
 
