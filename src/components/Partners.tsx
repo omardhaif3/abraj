@@ -53,9 +53,9 @@ const Partners: React.FC = () => {
     <Swiper
       modules={[Autoplay, Pagination]}
       autoplay={{ delay: 2500, disableOnInteraction: false }}
-      loop={partners.length > 2}
+      loop={partners.length > 3}
       pagination={{ clickable: true }}
-      spaceBetween={0}
+      spaceBetween={20}
       slidesPerView={2} // Make the current slide take up more space, showing parts of neighbors
       centeredSlides={true} // Keep the current slide centered
       className="w-full"
