@@ -23,24 +23,24 @@ const OurServices: React.FC<OurServicesProps> = ({ limit }) => {
   const displayedItems = limit ? workItems.slice(0, limit) : workItems;
 
   return (
-    <section id="work" className="py-24 bg-gray-100">
+    <section id="work" className="py-24 relative">
       <div className="max-w-5xl mx-auto px-2">
         <div className="flex items-center justify-center mb-6 space-x-4 rtl:space-x-reverse">
-          <h2 className={`text-4xl font-bold text-dark-blue ${isRTL ? 'font-cairo' : ''}`}>
+          <h2 className={`text-4xl font-bold text-black ${isRTL ? 'font-cairo' : ''}`}>
             {t('work.title')}
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {displayedItems.map(item => (
-            <TiltWrapper key={item.id} className="group rounded-lg overflow-hidden shadow-lg bg-white">
+            <TiltWrapper key={item.id} className="group rounded-lg overflow-hidden shadow-lg bg-[#ffedd8] max-w-xs mx-auto">
               <img
                 src={item.image}
                 alt={t(item.title)}
                 className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-dark-blue">{t(item.title)}</h3>
-                <p className="text-gray-600 mt-2">{t(item.description)}</p>
+                <h3 className="text-lg font-semibold text-black">{t(item.title)}</h3>
+                <p className="text-black mt-2">{t(item.description)}</p>
               </div>
             </TiltWrapper>
           ))}

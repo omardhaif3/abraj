@@ -18,15 +18,15 @@ const Footer: React.FC = () => {
   };
 
   return (
-      <footer className="bg-dark-blue text-white py-12">
+      <footer className="relative py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Company Info */}
             <div>
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="text-2xl font-bold mb-4 text-black">
                 {t('footer.agencyName')}
               </h3>
-              <p className={`text-gray-300 mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+              <p className={`mb-4 text-black ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL 
                   ? 'أبراج الوطنية شريك جدير بالثقة'
                   : 'Abraj Al-Watania a trustworthy partner.'}
@@ -35,12 +35,12 @@ const Footer: React.FC = () => {
             
             {/* Quick Links */}
             <div>
-              <h4 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+              <h4 className={`mb-4 text-xl font-semibold ${isRTL ? 'font-arabic' : ''} text-black`}>
                 {isRTL ? 'روابط سريعة' : 'Quick Links'}
               </h4>
               <ul className={`space-y-2 ${isRTL ? 'font-arabic' : ''}`}>
                 <li>
-                  <Link to="/#home" className="text-gray-300 hover:text-green-500 transition-colors">
+                  <Link to="/#home" className="text-black hover:text-green-500 transition-colors">
                     {t('nav.home')}
                   </Link>
                 </li>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                   <Link
                     to="/about"
                     onClick={handleAboutClick}
-                    className="text-gray-300 hover:text-green-500 transition-colors"
+                    className="text-black hover:text-green-500 transition-colors"
                   >
                     {t('nav.about')}
                   </Link>
@@ -62,13 +62,13 @@ const Footer: React.FC = () => {
                         window.location.reload();
                       }
                     }}
-                    className="text-gray-300 hover:text-green-500 transition-colors"
+                    className="text-black hover:text-green-500 transition-colors"
                   >
                     {t('nav.work')}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-300 hover:text-green-500 transition-colors">
+                  <Link to="/contact" className="text-black hover:text-green-500 transition-colors">
                     {t('nav.contact')}
                   </Link>
                 </li>
@@ -77,24 +77,24 @@ const Footer: React.FC = () => {
             
             {/* Contact Info */}
             <div>
-              <h4 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+              <h4 className={`mb-4 text-xl font-semibold ${isRTL ? 'font-arabic' : ''} text-black`}>
                 {isRTL ? 'اتصل بنا' : 'Contact Us'}
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Mail size={18} className="text-dark-blue" />
-                  <span className="text-gray-300">hello@reallygreatsite.com</span>
+                  <span className="text-black">hello@reallygreatsite.com</span>
                 </li>
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Phone size={18} className="text-dark-blue" />
-                  <span className="text-gray-300">012-1234-567</span>
+                  <span className="text-black">012-1234-567</span>
                 </li>
               </ul>
             </div>
             
             {/* Social Links */}
             <div>
-              <h4 className={`text-xl font-semibold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+              <h4 className={`mb-4 text-xl font-semibold ${isRTL ? 'font-arabic' : ''} text-black`}>
                 {isRTL ? 'تابعنا' : 'Follow Us'}
               </h4>
               <div className="flex space-x-4 rtl:space-x-reverse">
@@ -115,8 +115,8 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Copyright */}
-          <div className="pt-8 border-t border-gray-800 text-center">
-            <p className={`text-gray-400 ${isRTL ? 'font-arabic' : ''}`}>
+          <div className="pt-8 border-t border-gray-300 text-center">
+            <p className={`text-gray-600 ${isRTL ? 'font-arabic' : ''}`}>
               {t('footer.copyright')}
             </p>
           </div>

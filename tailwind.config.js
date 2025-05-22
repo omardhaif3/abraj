@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-blue': '#3931af',
-        'secondary': '#3931af',
-        'light-1': '#f5ebe0',
-        'light-2': '#d6ccc2',
-        'light-3': '#edede9',
+        'dark-blue': '#bc8a5f',
+        'secondary': '#e7bc91',
+        'light-1': '#f3d5b5',
+        'light-2': '#ffedd8',
+        'light-3': '#ffedd8',
       },
       fontFamily: {
         cairo: ['Cairo', 'sans-serif'],

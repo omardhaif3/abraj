@@ -32,7 +32,7 @@ function MainPageContent() {
   }, [location]);
 
   return (
-    <>
+    <div className="app-gradient-bg">
       <Navbar />
       <Hero />
       <About />
@@ -42,7 +42,7 @@ function MainPageContent() {
       <Partners />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

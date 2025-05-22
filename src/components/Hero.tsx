@@ -21,46 +21,53 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative h-screen overflow-hidden bg-dark-blue"
-      style={{
-        backgroundImage:
-          'url(/images/mainPhoto.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
       <div
-        className={`relative z-20 flex flex-col items-center justify-center h-full px-4 text-center font-cairo text-white`}
+        className={`container mx-auto flex flex-col ${isRTL ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center px-6 lg:px-0 gap-12`}
       >
-        <div className="h-20">
-          <p
-            className={`text-xl md:text-2xl mb-4 transition-all duration-1000 transform ${
+        {/* Image Container */}
+        <div className="relative w-full lg:w-1/2 h-96 rounded-tr-[120px] rounded-br-[120px] overflow-hidden shadow-2xl border-8 border-yellow-600 group cursor-pointer transform transition-transform duration-700 hover:scale-105">
+          <img
+            src="/images/mainPhoto.jpg"
+            alt="Hero"
+            className="w-full h-full object-cover filter brightness-90 contrast-110"
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-30 pointer-events-none rounded-tr-[120px] rounded-br-[120px]"></div>
+          {/* Decorative floating shapes */}
+          <div className="absolute -top-10 -left-10 w-24 h-24 bg-yellow-300 rounded-full opacity-50 animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-400 rounded-full opacity-40 animate-pulse delay-2000"></div>
+        </div>
+
+        {/* Text Content */}
+        <div className="w-full lg:w-1/2 flex flex-col gap-8" style={{ marginRight: '3rem' }}>
+          <h5
+            className={`text-2xl md:text-3xl font-extrabold text-black drop-shadow-lg transition-all duration-1000 transform ${
               showSlogan1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${isRTL ? 'font-cairo' : ''}`}
+            style={{ fontSize: '24px' }}
           >
             {t('home.slogan1')}
-          </p>
+          </h5>
 
           <p
-            className={`text-lg md:text-xl text-gray-300 transition-all duration-1000 transform ${
+            style={{ fontSize: '5px', lineHeight: '0.6rem' }}
+            className={`text-gray-900 drop-shadow-md transition-all duration-1000 transform ${
               showSlogan2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${isRTL ? 'font-cairo' : ''}`}
           >
             {t('home.slogan2')}
           </p>
-        </div>
 
-        <a
-          href="/profile.pdf"
-          download
-          className={`mt-12 px-8 py-3 rounded-full bg-secondary hover:bg-light-3 text-white font-semibold transition-all transform hover:scale-105 shadow-lg ${
-            isRTL ? 'font-cairo' : ''
-          }`}
-        >
-          {t('home.learnMore')}
-        </a>
+          <a
+            href="/profile.pdf"
+            download
+            className="self-start mt-4 px-10 py-4 rounded-full bg-yellow-700 hover:bg-yellow-600 text-white font-semibold shadow-lg transition-all transform hover:scale-105"
+          >
+            {t('home.learnMore')}
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -28,18 +28,18 @@ const OurDepartments: React.FC = () => {
   const { isRTL } = useLanguage();
 
   return (
-    <section id="departments" className="py-24 bg-white">
+    <section id="departments" className="py-24 relative">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className={`text-4xl font-bold text-dark-blue mb-12 text-center ${isRTL ? 'font-cairo' : ''}`}>
+        <h2 className={`text-4xl font-bold text-black mb-12 text-center ${isRTL ? 'font-cairo' : ''}`}>
           {t('departments.title')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {departments.map(dept => (
-            <div key={dept.id} className="bg-gray-100 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div key={dept.id} className="bg-[#ffedd8] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 max-w-xs mx-auto">
               <img src={dept.image} alt={t(dept.titleKey)} className="w-full h-48 object-cover" />
               <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-dark-blue mb-2">{t(dept.titleKey)}</h3>
-                <p className={`text-gray-700 ${isRTL ? 'font-cairo' : ''}`}>{t(dept.descriptionKey)}</p>
+                <h3 className="text-xl font-semibold text-black mb-2">{t(dept.titleKey)}</h3>
+                <p className={`text-black ${isRTL ? 'font-cairo' : ''}`}>{t(dept.descriptionKey)}</p>
               </div>
             </div>
           ))}

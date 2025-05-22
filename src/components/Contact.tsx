@@ -29,20 +29,20 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-dark-blue to-secondary">
+    <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-4">
-        <h2 className={`text-4xl font-bold mb-12 text-center text-white ${isRTL ? 'font-arabic' : ''}`}>
+        <h2 className={`text-4xl font-bold mb-12 text-center text-black ${isRTL ? 'font-arabic' : ''}`}>
           {t('contact.title')}
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-xl shadow-xl p-8">
+          <div className="bg-[#ffedd8] rounded-xl shadow-xl p-8">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label 
                   htmlFor="name" 
-                  className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  className={`block mb-2 text-sm font-medium text-black ${isRTL ? 'font-arabic text-right' : ''}`}
                   style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.name')}
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
               <div className="mb-6">
                 <label 
                   htmlFor="email" 
-                  className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  className={`block mb-2 text-sm font-medium text-black ${isRTL ? 'font-arabic text-right' : ''}`}
                   style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.email')}
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
               <div className="mb-6">
                 <label 
                   htmlFor="phone" 
-                  className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  className={`block mb-2 text-sm font-medium text-black ${isRTL ? 'font-arabic text-right' : ''}`}
                   style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.phone')}
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
               <div className="mb-6">
                 <label 
                   htmlFor="message" 
-                  className={`block mb-2 text-sm font-medium text-gray-700 ${isRTL ? 'font-arabic text-right' : ''}`}
+                  className={`block mb-2 text-sm font-medium text-black ${isRTL ? 'font-arabic text-right' : ''}`}
                   style={isRTL ? { textAlign: 'right' } : undefined}
                 >
                   {t('contact.message')}
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
           
           {/* Contact Info */}
           <div className="flex flex-col justify-center">
-            <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-8 text-white">
+            <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-8 text-black">
               <h3 className={`text-2xl font-bold mb-8 ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL ? 'معلومات الاتصال' : 'Contact Information'}
               </h3>
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-300 text-sm">{isRTL ? 'البريد الإلكتروني' : 'Email'}</p>
-                    <p className="text-white">hello@reallygreatsite.com</p>
+                    <p className="text-black">hello@reallygreatsite.com</p>
                   </div>
                 </div>
                 
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-300 text-sm">{isRTL ? 'الهاتف' : 'Phone'}</p>
-                    <p className="text-white">012-1234-567</p>
+                    <p className="text-black">012-1234-567</p>
                   </div>
                 </div>
                 
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-300 text-sm">{isRTL ? 'العنوان' : 'Address'}</p>
-                    <p className="text-white">{t('contact.addressInfo')}</p>
+                    <p className="text-black">{t('contact.addressInfo')}</p>
                   </div>
                 </div>
               </div>

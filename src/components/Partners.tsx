@@ -18,11 +18,11 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <section id="partners" className="py-24 bg-gray-50 flex flex-col items-center justify-center">
+    <section id="partners" className="py-24 relative flex flex-col items-center justify-center">
       <div className="container mx-auto px-4 flex flex-col items-center justify-center">
         <div className="flex items-center justify-center gap-4 mb-12">
-          <Users size={32} className="text-[#004594] icon-float hover:rotate-6 transition-all duration-500" />
-          <h2 className={`text-4xl font-bold text-[#004594] ${isRTL ? 'font-cairo' : ''}`}>
+          <Users size={32} className="text-black icon-float hover:rotate-6 transition-all duration-500" />
+          <h2 className={`text-4xl font-bold text-black ${isRTL ? 'font-cairo' : ''}`}>
             {t('partners.title')}
           </h2>
         </div>
@@ -33,7 +33,7 @@ const Partners: React.FC = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="group flex items-center justify-center p-8 bg-white rounded-xl shadow-sm 
+              className="group flex items-center justify-center p-8 bg-[#ffedd8] rounded-xl shadow-sm 
                          transition-all duration-300 transform hover:shadow-xl hover:scale-110 hover:-translate-y-1"
             >
               <img
@@ -63,7 +63,7 @@ const Partners: React.FC = () => {
     >
       {partners.map((partner, index) => (
         <SwiperSlide key={index}>
-          <div className=" flex items-center justify-center p-8 bg-white rounded-xl shadow-sm mx-4">
+          <div className=" flex items-center justify-center p-8 bg-[#ffedd8] rounded-xl shadow-sm mx-4">
             <img
               src={partner.logo}
               alt={partner.name}
