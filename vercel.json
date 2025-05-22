@@ -1,0 +1,21 @@
+{"rewrites": [
+    {
+      "source": "/posts/:id",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i)(bot|crawl|spider|slurp|facebook|twitter|whatsapp)"
+        }
+      ],
+      "destination": "https://injoyweb.onrender.com/api/posts/:id/meta"
+    },
+    {
+      "source": "/posts/:id",
+      "destination": "/index.html"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
+}
