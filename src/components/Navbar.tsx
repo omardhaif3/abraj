@@ -29,11 +29,6 @@ const Navbar: React.FC = () => {
     { key: "nav.work", to: "/services" },
     { key: "nav.contact", to: "/contact" },
   ];
-  
-  // Remove handleContactClick since contact is now a separate page
-  
-  // Update navItems rendering to remove onClick handler for contact link
-
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -61,13 +56,20 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* <a href="#" className="text-white text-2xl font-bold">
-            Plan <span className="text-purple-500">Eight</span>
-          </a> */}
-          <a href="/" className="block p-1 rounded" onClick={handleHomeClick}>
-            <img src="/images/Artboard 10@2x.png" alt="Plan Eight" className="h-10 bg-transparent" />
-          </a>
+        <div className="flex items-center justify-between relative">
+          {/* Circle div for logo */}
+          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-lg z-50">
+            <a href="/" className="block p-1 rounded-full" onClick={handleHomeClick}>
+              <img
+                src="/images/logo.jpg"
+                alt="Plan Eight"
+                className="h-20 w-20 rounded-full object-cover"
+              />
+            </a>
+          </div>
+
+          {/* Spacer div to keep navbar content centered */}
+          <div className="flex-1"></div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 rtl:space-x-reverse justify-center flex-1">

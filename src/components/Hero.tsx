@@ -19,43 +19,43 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0 z-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-blue/90 to-secondary/36 z-10"></div>
-        <img
-          src="/images/mainPhoto.jpg"
-          alt="Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: 'brightness(0.7)' }}
-        />
-      </div>
-      
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-        {/* <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isRTL ? 'font-cairo' : ''}`}>
-          Plan <span className="text-secondary">Eight</span>
-        </h1> */}
-        
+    <section
+      id="home"
+      className="relative h-screen overflow-hidden bg-dark-blue"
+      style={{
+        backgroundImage:
+          'url(/images/mainPhoto.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div
+        className={`relative z-20 flex flex-col items-center justify-center h-full px-4 text-center font-cairo text-white`}
+      >
         <div className="h-20">
-          <p 
+          <p
             className={`text-xl md:text-2xl mb-4 transition-all duration-1000 transform ${
               showSlogan1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${isRTL ? 'font-cairo' : ''}`}
           >
             {t('home.slogan1')}
           </p>
-          
-          <p 
-            className={`text-lg md:text-xl text-secondary transition-all duration-1000 transform ${
+
+          <p
+            className={`text-lg md:text-xl text-gray-300 transition-all duration-1000 transform ${
               showSlogan2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${isRTL ? 'font-cairo' : ''}`}
           >
             {t('home.slogan2')}
           </p>
         </div>
-        
-        <a 
-          href="#about" 
-          className={`mt-12 px-8 py-3 bg-dark-blue hover:bg-secondary rounded-full text-white font-medium transition-all transform hover:scale-105 ${
+
+        <a
+          href="/profile.pdf"
+          download
+          className={`mt-12 px-8 py-3 rounded-full bg-secondary hover:bg-light-3 text-white font-semibold transition-all transform hover:scale-105 shadow-lg ${
             isRTL ? 'font-cairo' : ''
           }`}
         >

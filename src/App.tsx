@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -13,16 +14,14 @@ import WhatsappButton from './components/WhatsappButton';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+// Removed unused import OurServices
+import OurDepartments from './components/OurDepartments';
 
 function MainPageContent() {
-  const { isRTL } = useLanguage();
   const location = useLocation();
 
-  // Determine position class based on direction
-  const positionClass = isRTL ? 'left-6' : 'right-6';
-
   useEffect(() => {
-    if (location.state && (location.state as any).scrollToHero) {
+    if (location.state && typeof location.state === 'object' && 'scrollToHero' in location.state) {
       const heroSection = document.getElementById('home');
       if (heroSection) {
         heroSection.scrollIntoView({ behavior: 'smooth' });
@@ -38,6 +37,7 @@ function MainPageContent() {
       <Hero />
       <About />
       <Work />
+       <OurDepartments />
       <Philosophy />
       <Partners />
       <Contact />
