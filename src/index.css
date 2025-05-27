@@ -19,7 +19,7 @@
   --primary-blue: #004594;
   --secondary: #f5a623;
   --accent: #00bfa6;
-  --background: #d5bdaf;
+  --background: #ffffff; /* Changed from #d5bdaf to white */
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
 }

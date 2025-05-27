@@ -1,4 +1,6 @@
 
+import './animated-background.css';
+import Background from './components/Background';
 import { useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -6,17 +8,17 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Work from './components/Work';
-import Philosophy from './components/Philosophy';
+import CertificationsAwards from './components/CertificationsAwards';
 import Partners from './components/Partners';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsappButton from './components/WhatsappButton';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import BoardOfDirectorsPage from './pages/BoardOfDirectorsPage';
 // Removed unused import OurServices
 import OurDepartments from './components/OurDepartments';
-
+import ChairmanMessagePage from './pages/ChairmanMessagePage';
 function MainPageContent() {
   const location = useLocation();
 
@@ -35,12 +37,14 @@ function MainPageContent() {
     <div className="app-gradient-bg">
       <Navbar />
       <Hero />
+      <Background />
+      {/* Removed OurServices as per the request */}
       <About />
       <Work />
        <OurDepartments />
-      <Philosophy />
+      <CertificationsAwards />
       <Partners />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </div>
   );
@@ -68,7 +72,10 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<MainPageContent />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/about-abrag" element={<AboutPage />} />
+        <Route path="/chairman-message" element={<ChairmanMessagePage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/board-of-directors" element={<BoardOfDirectorsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <WhatsappButton className={positionClass} />

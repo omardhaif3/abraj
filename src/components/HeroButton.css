@@ -1,0 +1,42 @@
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn-light-blue {
+  background-color: #e0f7ff;
+  color: #003366;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(0, 69, 148, 0.4);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-light-blue:hover {
+  color: white;
+  background: linear-gradient(270deg, #004594, #003366, #004594);
+  background-size: 200% 200%;
+  animation: wave 5s ease-in-out infinite;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 69, 148, 0.6);
+  transition: none;
+}
