@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
       <nav className="font-cairo top-0 bg-transparent z-50">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between relative">
-            <div className={`flex items-center ${isRTL ? "justify-end pl-12" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
+            <div className={`flex items-center ${isRTL ? "justify-start pl-0" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
               <a href="/" className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`} onClick={handleHomeClick}>
                 <img src="/images/logo.jpg" alt="Plan Eight" className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover" />
                 <div className="mx-1 flex items-center">
