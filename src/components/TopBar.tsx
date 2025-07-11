@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import {FiUser } from 'react-icons/fi';
 import { FaInstagram, FaLinkedinIn, FaSnapchat, FaTiktok, FaTwitter, FaFacebook } from 'react-icons/fa';
 
+
 const TopBar: React.FC = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";

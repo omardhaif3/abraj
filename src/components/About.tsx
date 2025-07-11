@@ -117,7 +117,7 @@ const cardItems = [
   return (
     <section 
       id="about" 
-      className="relative overflow-hidden py-0 pt-0 mt-12"
+      className="relative overflow-hidden py-0 pt-0 mt-0"
       style={{
         background: `
           linear-gradient(135deg, rgba(245, 247, 255, 0.98) 0%, rgba(240, 243, 255, 0.95) 100%),
