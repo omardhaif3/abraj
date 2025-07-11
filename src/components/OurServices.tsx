@@ -45,7 +45,7 @@ return (
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true }}
     >
-      <div className="flex flex-col md:flex-row items-center gap-8 bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 hover:from-purple-600 hover:to-indigo-600 border border-gray-700 rounded-3xl shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-500">
+      <div className="flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-blue-400 to-blue-800 border border-gray-700 rounded-3xl shadow-lg overflow-hidden hover:scale-[1.02] transition-all duration-500">
           <div className="w-full md:w-1/2 p-6 mb-10 text-left md:text-left">
           <h3 className={`text-3xl font-bold text-white ${isRTL ? 'font-cairo' : ''}`}>
             {t(item.title)}
@@ -99,7 +99,7 @@ return (
                 }}
               >
                 <TiltWrapper className="relative group transform transition duration-500 hover:scale-[1.03] hover:-translate-y-1">
-                  <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/10 bg-gradient-to-br from-indigo-600 via-indigo-500 to-purple-600 hover:from-purple-600 hover:to-indigo-600 backdrop-blur-lg">
+                  <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/10 bg-gradient-to-r from-blue-400 to-blue-800 backdrop-blur-lg">
                     <img
   src={item.image}
   alt={t(item.title)}

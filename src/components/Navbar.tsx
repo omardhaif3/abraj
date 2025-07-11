@@ -29,6 +29,8 @@ const Navbar: React.FC = () => {
     },
     { key: "nav.work", to: "/services" },
     { key: "nav.contact", to: "/contact" },
+    { key: "nav.branches", to: "/branches" },
+    { key: "nav.projects", to: "/projects" },
   ];
 
   const toggleMenu = () => {
