@@ -3,6 +3,8 @@ import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
 import { Instagram, Twitter, Linkedin, Facebook, Mail, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaInstagram, FaTwitter } from 'react-icons/fa6';
+import { FaFacebook, FaLinkedin, FaSnapchat, FaTiktok } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const t = useTranslation();
@@ -28,7 +30,7 @@ const Footer: React.FC = () => {
               </h3>
               <p className={`mb-4 text-white ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL 
-                  ? 'أبراج الوطنية شريك جدير بالثقة'
+                  ? 'شريكك في الجودة منذ اللحظة الأولى'
                   : 'Abraj Al-Watania a trustworthy partner.'}
               </p>
             </div>
@@ -83,11 +85,11 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Mail size={18}  />
-                  <span className="text-white">hello@reallygreatsite.com</span>
+                  <span className="text-white">Info@abrajalwatania.sa</span>
                 </li>
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <Phone size={18}  />
-                  <span className="text-white">012-1234-567</span>
+                  <span className="text-white">0112479609</span>
                 </li>
               </ul>
             </div>
@@ -98,17 +100,23 @@ const Footer: React.FC = () => {
                 {isRTL ? 'تابعنا' : 'Follow Us'}
               </h4>
               <div className="flex space-x-4 rtl:space-x-reverse">
-                <a href="#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Instagram">
-                  <Instagram size={20} />
+                <a href="https://www.instagram.com/marketingabraj1/?igsh=NmZ6ZmVqdnB6aGhi#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Instagram">
+                  <FaInstagram size={20} />
                 </a>
-                <a href="#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Twitter">
-                  <Twitter size={20} />
+                <a href="https://x.com/aalwatania40994?s=11" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Twitter">
+                  <FaTwitter size={20} />
                 </a>
-                <a href="#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="LinkedIn">
-                  <Linkedin size={20} />
+                <a href="https://www.linkedin.com/in/%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D8%A8%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-04857a242/" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="LinkedIn">
+                  <FaLinkedin size={20} />
                 </a>
-                <a href="#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Facebook">
-                  <Facebook size={20} />
+                <a href="https://www.facebook.com/people/National-Abraj-for-Operation-Maintenance-Co/100083151311350/?mibextid=2JQ9oc" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Facebook">
+                  <FaFacebook size={20} />
+                </a>
+                <a href="https://www.tiktok.com/@abrajalwatania?_t=8k9SINdxCNB&_r=1" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Tiktok">
+                  <FaTiktok size={20} />
+                </a>
+                <a href="https://www.snapchat.com/add/abrag711?share_id=_-CFY32vBLw&locale=ar-EG" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Snapchat">
+                  <FaSnapchat size={20} />
                 </a>
               </div>
             </div>

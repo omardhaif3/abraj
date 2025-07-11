@@ -1,0 +1,80 @@
+export const branches = [
+  {
+    id: '1',
+    nameKey: 'downtownBranch',
+    descriptionKey: 'downtownDescription',
+    address: '123 Main Street',
+    city: 'New York',
+    state: 'NY',
+    zip: '10001',
+    phone: '(555) 123-4567',
+    email: 'downtown@company.com',
+    hours: 'Mon-Fri: 9:00 AM - 5:00 PM',
+    image: 'https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '2',
+    nameKey: 'midtownBranch',
+    descriptionKey: 'midtownDescription',
+    address: '456 Business Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10017',
+    phone: '(555) 234-5678',
+    email: 'midtown@company.com',
+    hours: 'Mon-Fri: 8:30 AM - 6:00 PM',
+    image: 'https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '3',
+    nameKey: 'brooklynBranch',
+    descriptionKey: 'brooklynDescription',
+    address: '789 Brooklyn Heights Blvd',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+    phone: '(555) 345-6789',
+    email: 'brooklyn@company.com',
+    hours: 'Mon-Fri: 9:00 AM - 5:00 PM, Sat: 10:00 AM - 2:00 PM',
+    image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '4',
+    nameKey: 'losAngelesBranch',
+    descriptionKey: 'losAngelesDescription',
+    address: '321 Sunset Strip',
+    city: 'Los Angeles',
+    state: 'CA',
+    zip: '90028',
+    phone: '(555) 456-7890',
+    email: 'la@company.com',
+    hours: 'Mon-Fri: 9:00 AM - 5:00 PM',
+    image: 'https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '5',
+    nameKey: 'chicagoBranch',
+    descriptionKey: 'chicagoDescription',
+    address: '654 Michigan Avenue',
+    city: 'Chicago',
+    state: 'IL',
+    zip: '60611',
+    phone: '(555) 567-8901',
+    email: 'chicago@company.com',
+    hours: 'Mon-Fri: 8:00 AM - 6:00 PM',
+    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: '6',
+    nameKey: 'miamiBranch',
+    descriptionKey: 'miamiDescription',
+    address: '987 Ocean Drive',
+    city: 'Miami',
+    state: 'FL',
+    zip: '33139',
+    phone: '(555) 678-9012',
+    email: 'miami@company.com',
+    hours: 'Mon-Fri: 9:00 AM - 5:00 PM',
+    image: 'https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=400'
+  }
+];

@@ -19,6 +19,8 @@ import BoardOfDirectorsPage from './pages/BoardOfDirectorsPage';
 // Removed unused import OurServices
 import OurDepartments from './components/OurDepartments';
 import ChairmanMessagePage from './pages/ChairmanMessagePage';
+import BranchesPage from './pages/OurBranches';
+import ProjectsPage from './pages/OurProjects';
 function MainPageContent() {
   const location = useLocation();
 
@@ -53,7 +55,7 @@ function MainPageContent() {
 function App() {
   // Update the document title
   useEffect(() => {
-    document.title = 'Plan Eight - Tech & Branding';
+    document.title = 'أبراج الوطنية للتشغيل والصيانة والموارد البشرية';
   }, []);
 
   return (
@@ -77,6 +79,8 @@ function AppContent() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/board-of-directors" element={<BoardOfDirectorsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+         <Route path="/branches" element={<BranchesPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
       <WhatsappButton className={positionClass} />
     </>

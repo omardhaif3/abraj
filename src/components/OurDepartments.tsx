@@ -33,12 +33,12 @@ const OurDepartments: React.FC = () => {
       <section id="departments" className="py-0 relative">
         <div className="animated-blue-bg py-16">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className={`text-4xl font-bold text-white mb-12 text-center ${isRTL ? 'font-cairo' : ''}`}>
+            <h2 className={`text-4xl font-bold text-black mb-12 text-center ${isRTL ? 'font-cairo' : ''}`}>
               {t('departments.title')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {departments.map(dept => (
-                <div key={dept.id} className="relative rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 max-w-xs mx-auto" style={{ backgroundColor: '#002b5c' }}>
+                <div key={dept.id} className="relative rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 max-w-xs mx-auto" style={{ backgroundColor: '#3D4B9F' }}>
                   <div className="absolute inset-0 bg-[rgba(240,240,240,0.2)] rounded-lg pointer-events-none"></div>
                   <img src={dept.image} alt={t(dept.titleKey)} className="w-full h-48 object-cover relative z-10" />
                   <div className="p-6 text-center relative z-10">
