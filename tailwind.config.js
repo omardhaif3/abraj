@@ -16,8 +16,13 @@ export default {
       fontFamily: {
         cairo: ['Cairo', 'sans-serif'],
         arabic: ['Amiri', 'serif'],
+      
       },
+    screens: {
+        'mobile450': { 'max': '640px' }
+      }
     },
+
   },
   plugins: [],
 }

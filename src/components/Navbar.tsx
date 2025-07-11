@@ -52,14 +52,14 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-50">
+    <div className="absolute top-0 left-0 right-0 z-50 ">
       <TopBar />
       <nav className="font-cairo top-0 bg-transparent z-50">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between relative">
             <div className={`flex items-center ${isRTL ? "justify-start pl-0" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
               <a href="/" className={`flex items-center ${isRTL ? "flex-row-reverse" : ""}`} onClick={handleHomeClick}>
-                <img src="/images/logo.jpg" alt="Plan Eight" className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover" />
+                <img src="/images/logo.png" alt="Plan Eight" className="h-12 w-12 md:h-20 md:w-20 rounded-full object-cover" />
                 <div className="mx-1 flex items-center">
                   <svg width="4" height="40" className="md:h-20" viewBox="0 0 4 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -72,9 +72,8 @@ const Navbar: React.FC = () => {
                     <rect x="1.5" y="0" width="1" height="80" fill="url(#lineGradient)" />
                   </svg>
                 </div>
-                <div className="text-white leading-tight">
-                  <div className="text-sm items-start md:text-lg font-semibold p-0 m-0">شركة أبراج الوطنية</div>
-                  <div className="text-sm items-start md:text-lg font-semibold p-0 m-0">ِAbrag</div>
+                <div className={location.pathname === "/" ? "text-white leading-tight" : "text-black leading-tight"}>
+                  <div className={`text-sm items-start md:text-lg font-semibold p-0 m-0`}>  {t('nav.camname')}</div>
                 </div>
               </a>
             </div>
@@ -88,7 +87,7 @@ const Navbar: React.FC = () => {
                   <li key={item.key} className="relative group">
                     {item.dropdown ? (
                       <>
-                        <span className="relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap cursor-pointer">
+                        <span className={location.pathname === "/" ? "relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap cursor-pointer" : "relative text-black text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap cursor-pointer"}>
                           {t(item.key)}
                           <svg
                             className="inline-block ml-1 w-3 h-3"
@@ -109,7 +108,7 @@ const Navbar: React.FC = () => {
                                 className="block px-4 py-2 text-white hover:bg-[#003366] whitespace-nowrap"
                               >
                                 {subItem.key === "nav.aboutAbrag" ? (
-                                  isRTL ? "عن أبراج" : "About Abrag"
+                                  isRTL ? "عن أبراج" : "About Abraj"
                                 ) : subItem.key === "nav.chairmanMessage" ? (
                                   isRTL ? "كلمة الرئيس" : "Chairman Message"
                                 ) : subItem.key === "nav.boardOfDirectors" ? (
@@ -126,7 +125,7 @@ const Navbar: React.FC = () => {
                       <a
                         href={item.to}
                         onClick={handleHomeClick}
-                        className="relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap"
+                        className={location.pathname === "/" ? "relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap" : "relative text-black text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap"}
                       >
                         <span className="inline-block transition-transform duration-300">{t(item.key)}</span>
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
@@ -134,7 +133,7 @@ const Navbar: React.FC = () => {
                     ) : (
                       <Link
                         to={item.to}
-                        className="relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap"
+                        className={location.pathname === "/" ? "relative text-white text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap" : "relative text-black text-lg font-medium transition duration-300 ease-in-out py-2 inline-block group whitespace-nowrap"}
                       >
                         <span className="inline-block transition-transform duration-300">{t(item.key)}</span>
                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#003366] transition-all duration-300 group-hover:w-full"></span>
@@ -174,7 +173,7 @@ const Navbar: React.FC = () => {
             }`}
           style={{
   width: "200px",
-  background: "linear-gradient(to bottom, #1e3c72, #2a5298, #a0c4ff)", // dark to light downwards
+  background: "linear-gradient(to bottom, #1e3c72, #2a5298, #a0c4ff)", // dark to light downwards (3D4B9F) اللون المعتمد
   transform: isMenuOpen
     ? "translateX(0)"
     : menuDirectionRef.current

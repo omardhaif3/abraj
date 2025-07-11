@@ -53,7 +53,7 @@ function MainPageContent() {
 function App() {
   // Update the document title
   useEffect(() => {
-    document.title = 'Plan Eight - Tech & Branding';
+    document.title = 'أبراج الوطنية للتشغيل والصيانة والموارد البشرية';
   }, []);
 
   return (

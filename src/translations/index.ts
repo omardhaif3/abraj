@@ -3,17 +3,22 @@ import { Translations } from '../types';
 const translations: Translations = {
   en: {
     // Navigation
+    'nav.camname': 'Abraj Al-Watania',
     'nav.home': 'Home',
     'nav.about': 'About Us',
     'nav.work': 'Our Services',
     'nav.philosophy': 'Our Philosophy',
-    'nav.partners': 'Our Partners',
+    'nav.partners': 'Success Partners',
     'nav.contact': 'Contact Us',
     
     // Home
     'home.learnMore': 'Download Profile',
     'home.slogan1': 'With a sharp vision and ambitious outlook, we navigate through every detail to achieve outstanding results with you.',
     'home.slogan2': ' ',
+    'home.slogan3': 'With a sharp vision and ambitious outlook, we navigate through every detail to achieve outstanding results with you.',
+    'home.slogan4': ' ',
+    'home.slogan5': 'With a sharp vision and ambitious outlook, we navigate through every detail to achieve outstanding results with you.',
+    'home.slogan6': ' ',
     
     // About
     'about.title': 'Our Journey',
@@ -23,7 +28,19 @@ const translations: Translations = {
     'about.title2':'Our Mission',
     'about.text2':'Providing distinguished and sophisticated performance that exceeds the expectations of our customers',
     'about.title3':'Our Values',
-    'about.text3':'Integrity - Quality - Respect - Commitment - Teamwork - Accuracy - Safety.',
+    'about.text3_1':'Safety',
+    'about.text3_2':'Integrity',
+    'about.text3_3':'Teamwork',
+    'about.text3_4':'Respect',
+    'about.text3_5':'Quality',
+    'about.text3_6':'Commitment',
+    'about.text3_1_desc':'We prioritize a safe environment for everyone, ensuring protection and well-being in all we do',
+    'about.text3_2_desc':'We act with honesty, transparency, and strong moral principles in every decision',
+    'about.text3_3_desc':'We believe in collaboration and the power of working together to achieve success',
+    'about.text3_4_desc':'We treat everyone with dignity, fairness, and appreciation for differences',
+    'about.text3_5_desc':'We are committed to delivering excellence and maintaining high standards in everything we do',
+    'about.text3_6_desc':'We stay dedicated to our goals, responsibilities, and promises, no matter the challenges',
+    'about.text3':'Integrity - Quality - Respect - Commitment - Teamwork  - Safety.',
 
     // Board of Directors
     'boardOfDirectors.title': 'Board of Directors',
@@ -82,6 +99,12 @@ const translations: Translations = {
     'contact.emailInfo': 'Email: info@abrajalwatania.sa',
     'contact.phoneInfo': 'Phone: 966 55 917 8138',
     'contact.addressInfo': 'Riyadh - Al Uraija Al Gharbi.',
+    'contact.subtitle': "We'd love to hear from you",
+  'contact.formTitle': 'Send us a message',
+  'contact.namePlaceholder': 'Enter your name',
+  'contact.emailPlaceholder': 'Enter your email',
+  'contact.phonePlaceholder': 'Enter your phone',
+  'contact.messagePlaceholder': 'Type your message here...',
     // Departments
     'departments.title': 'Our Departments',
     'departments.marketing.title': 'Legal Department',
@@ -96,15 +119,20 @@ const translations: Translations = {
     'footer.agencyName': 'Abraj Al-Watania',
 
     // Certifications & Awards
-    'certifications.iso9001Title': 'ISO 9001: 2015',
+    'certifications.downloadPdf':'DownLoad ',
+    'certifications.iso9001Title': 'ISO 21500:2015',
     'certifications.iso9001Description': 'ISO 9001: 2015 is the international standard that specifies requirements for a quality management system (QMS)...',
     'certifications.tools': 'Tools',
     'certifications.training': 'Training',
     'certifications.services': 'Services',
     'certifications.staff': 'Staff',
     'certifications.facilities': 'Facilities',
-    'certifications.otherTitle': 'Other Certificate',
-    'certifications.otherDescription': 'This is a description of another certificate highlighting the company\'s achievements and accreditations.',
+    'certifications.ISO21500Title': 'ISO 21500:2021',
+    'certifications.ISO21500Description': 'ISO 21500:2021 is an international standard that provides guidance on effective project management practices.',
+   'certifications.certification3Title': 'ISO14001:2015',
+    'certifications.certification3Description': 'is an international standard that specifies requirements for an environmental management system (EMS).',
+   'certifications.certification4Title': 'ISO45001:2018',
+    'certifications.certification4Description': 'is an international standard for occupational health and safety management systems (OHSMS)',
     'certifications.mediaCenter': 'Media Center',
     'certifications.accreditations': 'Accreditations',
     'certifications.awards': 'Awards',
@@ -122,6 +150,7 @@ const translations: Translations = {
   },
   ar: {
     // Navigation
+    'nav.camname': 'شركة أبراج الوطنية للتشغيل والصيانة',
     'nav.home': 'الرئيسية',
     'nav.about': 'من نحن',
     'nav.work': 'خدماتنا',
@@ -130,18 +159,35 @@ const translations: Translations = {
     'nav.contact': 'تواصل معنا',
     
     // Home
-    'home.learnMore': 'تحميل الكتاب',
-    'home.slogan1': 'بنظرة ثاقبة ورؤیة طموحة نبحر في كل،  التفاصیل لنحقق معكم نتائج مبھرة ',
+    'home.learnMore':'الكتاب التعريفي',
+    'home.slogan1': 'شريكك في الجودة منذ اللحظة الأولى',
+    'home.slogan3': 'شريكك في الجودة منذ اللحظة الأولى',
+    'home.slogan5': 'شريكك في الجودة منذ اللحظة الأولى',
     'home.slogan2': ' ',
+    'home.slogan4': ' ',
+    'home.slogan6': ' ',
     
     // About
-    'about.title': 'من نحن',
-    'about.text': 'تعتبر شركة أبراج للتشغيل والصيانة هي شركة وطنية سعودية تأسست في الرياض لتقديم الخدمات المتميزة في مجالات الادارة والتشغيل والصيانة والنظافة. لقد أصبحت الان من اكبر الشركات السعودية في مجال خدمات التشغيل والصيانة. حيث تقدم خدمات ادارة العمليات التشغيلية بشكل كامل وكذلك توفير خدمات الصيانة والنظافة والضيافة. ',
+    'about.title':'من نحن',
+    'about.text': 'شركة سعودية وطنية رائدة، تتخذ من مدينة الرياض مقرًا رئيسيًا لها، وتُعنى بتقديم حلول متكاملة ومتميزة في مجالات الإدارة، التشغيل، الصيانة، النظافة، والضيافة.منذ تأسيسها، سعت الشركة إلى تحقيق أعلى معايير الجودة والكفاءة، مما مكّنها من أن تحتل مكانة مرموقة ضمن كبرى الشركات المتخصصة في هذا القطاع داخل المملكة.تُقدم أبراج الوطنية خدمات تشغيلية متكاملة تشمل إدارة العمليات اليومية بكفاءة عالية، بالإضافة إلى توفير خدمات الصيانة الشاملة، النظافة المتخصصة، وخدمات الضيافة بمعايير احترافية تواكب تطلعات عملائها في مختلف القطاعات الحكومية والخاصة.تلتزم الشركة برؤية واضحة نحو التميز والاستدامة، وتعمل بفريق عمل مؤهل وتقنيات حديثة لضمان تحقيق أعلى مستويات الرضا والجودة في كل ما تقدمه.',
     'about.title1':' رؤيتنا',
-    'about.text1':'أن نكون من أفضل الشركات الرائدة في مجال إدارة جميع المؤسسات والمرافق في المملكة العربية السعودية.',
-    'about.title2':'رسالتنا',
-    'about.text2':'تقديم أداء مميز ومتقن يفوق توقعات عمالئنا',
+    'about.text1':'أن نكون الخيار الأول والوجهة الرائدة في المملكة العربية السعودية في تقديم حلول الإدارة والتشغيل والصيانة المتكاملة، عبر التميّز في الأداء، والابتكار المستدام، والشراكات الاستراتيجية التي تخلق قيمة حقيقية لعملائنا وتدعم تطلعات رؤية المملكة 2030',
+    'about.title2':'مهمتنا',
+    'about.text2':'تقديم خدمات متكاملة في الإدارة، التشغيل، الصيانة، والنظافة، تتميز بالكفاءة العالية والجودة المتقنة، بما يفوق توقعات عملائنا ويعزز من ثقتهم، من خلال فرق عمل مؤهلة، وتقنيات حديثة، ومنهجيات مستدامة تواكب متطلبات السوق وتدعم تطلعات التنمية في المملكة.',
     'about.title3':'قيمنا',
+    'about.text3_1':'السلامة',
+    'about.text3_2':'النزاهه',
+    'about.text3_3':'العمل الجماعي',
+    'about.text3_4':'الإحترام',
+    'about.text3_5':'الجودة',
+    'about.text3_6':'النزاهة',
+    'about.text3_1_desc':'نحن نضع السلامة أولاً، ونحرص على حماية الجميع وضمان رفاهيتهم في كل ما نقوم به',
+    'about.text3_2_desc':' نتصرف بأمانة وشفافية، ونلتزم بأعلى المعايير الأخلاقية في جميع قراراتنا.',
+    'about.text3_3_desc':'نؤمن بالتعاون وقوة العمل الجماعي لتحقيق النجاح المشترك',
+    'about.text3_4_desc':'نعامل الجميع بكرامة وعدل، ونقدر الاختلافات ونتعامل معها باحترام',
+    'about.text3_5_desc':'نعامل الجميع بكرامة وعدل، ونقدر الاختلافات ونتعامل معها باحترام',
+    'about.text3_6_desc':'نحن ملتزمون بأهدافنا ومسؤولياتنا ووعودنا، مهما كانت التحديات.',
+    // 'about.text3_7':'قيمنا',
     'about.text3':'النزاهة – الجودة – الإحترام - الإلتزام – العمل الجماعي – الدقة – السلامة',
 
     // Board of Directors
@@ -184,7 +230,7 @@ const translations: Translations = {
     
     // Partners
     'partners.mediaCenter': 'المركز الإعلامي',
-    'partners.ourPartners': 'الشركات التابعة',
+    'partners.ourPartners': 'شركاء النجاح',
     'partners.more': 'المزيد',
     'partners.qomrhDescription': 'شركة قمره هي شركة رائدة في مجال التقنية تقدم حلول مبتكرة لتطوير الأعمال.',
     'partners.eumqDescription': 'شركة إيمك متخصصة في التسويق الرقمي وتقديم خدمات متكاملة للعملاء.',
@@ -200,6 +246,12 @@ const translations: Translations = {
     'contact.emailInfo': 'البريد الإلكتروني: info@abrajalwatania.sa',
     'contact.phoneInfo': 'الهاتف: 966 55 917 8138',
     'contact.addressInfo': 'المملكة العربية السعودية',
+     'contact.subtitle': 'يسعدنا تواصلك معنا',
+  'contact.formTitle': 'أرسل لنا رسالة',
+  'contact.namePlaceholder': 'أدخل اسمك',
+  'contact.emailPlaceholder': 'أدخل بريدك الإلكتروني',
+  'contact.phonePlaceholder': 'أدخل رقم هاتفك',
+  'contact.messagePlaceholder': 'اكتب رسالتك هنا...',
     // Departments
     'departments.title': 'أقسامنا',
     'departments.marketing.title': 'الإدارة القانونية',
@@ -214,14 +266,21 @@ const translations: Translations = {
 
     // Certifications & Awards
     'certifications.iso9001Title': 'ISO 9001: 2015',
+
     'certifications.iso9001Description': 'ISO 9001: 2015 هو المعيار الدولي الذي يحدد متطلبات نظام إدارة الجودة (QMS)...',
+    'certifications.downloadPdf':'تحميل ',
     'certifications.tools': 'الأدوات',
     'certifications.training': 'التدريب',
     'certifications.services': 'الخدمات',
     'certifications.staff': 'الموظفين',
     'certifications.facilities': 'المرافق',
-    'certifications.otherTitle': 'شهادة أخرى',
-    'certifications.otherDescription': 'هذا وصف لشهادة أخرى يبرز إنجازات الشركة واعتمادها.',
+    'certifications.ISO21500Title': 'ISO 21500:2021',
+    'certifications.ISO21500Description': 'هو معيار دولي يقدّم إرشادات لإدارة المشاريع بشكل فعّال. يوضح هذا المعيار المفاهيم والمبادئ والعمليات الأساسية التي تساهم في نجاح إدارة المشاريع في جميع أنواع المؤسسات والقطاعات.',
+   'certifications.certification3Title': 'ISO14001:2015',
+    'certifications.certification3Description': 'هو معيار دولي يحدّد متطلبات نظام إدارة البيئة (EMS). يساعد المؤسسات على تحسين أدائها البيئي من خلال الاستخدام الفعّال للموارد، وتقليل النفايات، والامتثال للتشريعات البيئية. ينطبق هذا المعيار على جميع أنواع المؤسسات بغض النظر عن حجمها أو قطاعها.',
+   'certifications.certification4Title': 'ISO45001:2018',
+    'certifications.certification4Description': 'هو معيار دولي لنظام إدارة السلامة والصحة المهنية (OHSMS). يوفّر إطارًا لتحسين سلامة الموظفين، وتقليل مخاطر مكان العمل، وخلق بيئة عمل أكثر أمانًا. ينطبق هذا المعيار على جميع أنواع المؤسسات.',
+   
     'certifications.mediaCenter': 'المركز الإعلامي',
     'certifications.accreditations': 'الاعتمادات',
     'certifications.awards': 'الجوائز',
@@ -236,6 +295,7 @@ const translations: Translations = {
     'chairmanMessagePage.messageText': 'في شركة أبراج الوطنية، نؤمن بأن الابتكار والجودة هما أساس التميز. نعمل بجد لتطوير حلول وخدمات تعزز من مكانة المملكة في مختلف القطاعات. التزامنا لا يقتصر على الأداء بل يتعداه ليشمل بناء علاقات مستدامة ومجتمع قوي قائم على المعرفة والتطور.',
     'chairmanMessagePage.chairmanName': 'محمد العزاوي',
     'chairmanMessagePage.chairmanTitle': 'رئيس مجلس الإدارة',
+
   }
 };
 

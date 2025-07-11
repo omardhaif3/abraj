@@ -7,26 +7,26 @@ const certificationsData = (t: (key: string) => string) => [
   {
     title: t('certifications.iso9001Title'),
     description: t('certifications.iso9001Description'),
-    icons: [
-      { label: t('certifications.tools'), icon: '🛠️' },
-      { label: t('certifications.training'), icon: '🎓' },
-      { label: t('certifications.services'), icon: '🛎️' },
-      { label: t('certifications.staff'), icon: '👥' },
-      { label: t('certifications.facilities'), icon: '🏢' },
-    ],
-    imageSrc: '/images/certifications/iso9001.png',
+    pdfUrl: '/images/certifications/UAF-Americo-ISO-9001.pdf',
+    imageSrc: '/images/certifications/iso.png',
   },
   {
-    title: t('certifications.otherTitle'),
-    description: t('certifications.otherDescription'),
-    icons: [
-      { label: t('certifications.tools'), icon: '🛠️' },
-      { label: t('certifications.training'), icon: '🎓' },
-      { label: t('certifications.services'), icon: '🛎️' },
-      { label: t('certifications.staff'), icon: '👥' },
-      { label: t('certifications.facilities'), icon: '🏢' },
-    ],
-    imageSrc: '/images/certifications/other-cert.png',
+    title: t('certifications.ISO21500Title'),
+    description: t('certifications.ISO21500Description'),
+    pdfUrl: '/images/certifications/21500.pdf',
+    imageSrc: '/images/certifications/iso-45001-certified.png',
+  },
+  {
+    title: t('certifications.certification3Title'),
+    description: t('certifications.certification3Description'),
+    pdfUrl: '/images/certifications/UAF-Americo-ISO-14001.pdf',
+    imageSrc: '/images/certifications/isocer.png',
+  },
+  {
+    title: t('certifications.certification4Title'),
+    description: t('certifications.certification4Description'),
+    pdfUrl: '/images/certifications/UAF-Americo-ISO-45001.pdf',
+    imageSrc: '/images/certifications/isocer.png',
   },
 ];
 
@@ -70,12 +70,13 @@ const CertificationsAwards: React.FC = () => {
   <h3 className="text-2xl font-extrabold text-dark-blue mb-4">{current.title}</h3>
   <p className="text-gray-700 text-justify mb-6 leading-relaxed">{current.description}</p>
   <div className="grid grid-cols-5 gap-4 text-center text-sm font-bold text-dark-blue">
-    {current.icons.map(({ label, icon }) => (
-      <div key={label} className="flex flex-col items-center space-y-1">
-        <span className="text-2xl">{icon}</span>
-        <span>{label}</span>
-      </div>
-    ))}
+    <a
+      href={current.pdfUrl}
+      download
+      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      {t('certifications.downloadPdf')}
+    </a>
   </div>
 </div>
 
@@ -90,12 +91,13 @@ const CertificationsAwards: React.FC = () => {
   <h3 className="text-2xl font-extrabold text-dark-blue mb-4">{current.title}</h3>
   <p className="text-gray-700 text-justify mb-6 leading-relaxed">{current.description}</p>
   <div className="flex flex-wrap justify-center gap-y-6 text-center text-sm font-bold text-dark-blue">
-    {current.icons.map(({ label, icon }) => (
-      <div key={label} className="flex flex-col items-center space-y-1 w-1/3">
-        <span className="text-2xl">{icon}</span>
-        <span>{label}</span>
-      </div>
-    ))}
+    <a
+      href={current.pdfUrl}
+      download
+      className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      {t('certifications.downloadPdf')}
+    </a>
   </div>
 </div>
 
