@@ -1,4 +1,5 @@
-{"rewrites": [
+{
+  "rewrites": [
     {
       "source": "/posts/:id",
       "has": [
@@ -15,7 +16,15 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "npm run build",
+
+  "build": {
+    "env": {
+      "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+    },
+  
+    "command": "npm run build"
+  },
+
   "outputDirectory": "dist",
   "framework": "vite"
 }
