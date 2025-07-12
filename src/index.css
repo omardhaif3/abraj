@@ -29,14 +29,18 @@ html {
 }
 
 body {
-    overflow-x: hidden !important;
+  
   font-family: 'Roboto', sans-serif;
   color: var(--text-primary);
   background-color: var(--background);
   line-height: 1.5;
 }
+html, body {
+  overflow-x: hidden;
+}
 
 html[lang="ar"] body {
+  
   font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
 }
 

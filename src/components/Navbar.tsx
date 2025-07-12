@@ -6,6 +6,7 @@ import TopBar from "./TopBar";
 import { useTranslation } from "../hooks/useTranslation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { styleEffect } from "framer-motion";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,42 +95,44 @@ const Navbar: React.FC = () => {
 
   return (
     
-    <div className={`fixed top-0 left-0 right-0  z-50 ${isRTL ? "": ""}`} >
+     <div className="fixed top-0 left-0 right-0 z-50 ">
       {/* TopBar with blur effect */}
-      <div className={`${isScrolled || location.pathname !== "/" ? "bg-blue-200/80 backdrop-blur-md" : "bg-transparent"} transition-all duration-300`} style={{ zIndex: 60 }}>
+      <div className={`${isScrolled || location.pathname !== "/" ? "bg-blue-200/80 backdrop-blur-md " : "bg-transparent"} transition-all duration-300`} style={{ zIndex: 60 }}>
         <TopBar  />
       </div>
-      
-      <nav className={`font-cairo transition-all duration-300 ${getNavbarStyle()}`}>
-        <div className="container mx-auto px-2 pb-1 pt-0" >
-          <div className="flex items-center justify-between relative">
-            <div className="flex items-center justify-start w-full md:w-64  " style={{ marginRight:0  }}>
-              <a 
-                href="/" 
-                className={`flex items-center ${isRTL ? "flex-row-reverse" : ""} group`} 
-                onClick={handleHomeClick}
-              >
-                <div className="relative">
-                  <img 
-  src="/images/logo.png" 
-  alt="Company Logo" 
-    className={`object-contain rounded-full flex-shrink-0 ${isRTL ? 'h-20 w-28 md:h-20 md:w-36' : 'h-16 w-16 md:h-20 md:w-20'}`}
-/>
 
-                </div>
-                
-                <div className="mx-1 flex items-center">
-                  <div className="w-1 h-8 md:h-12 bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
-                </div>
-                
-                <div className={`${getTextColor()} transition-colors duration-300`}>
-                  <div className={`text-base md:text-lg font-bold ${isRTL ? 'text-lg' : 'text-base'}`}>
-  {t('nav.camname')}
-</div>
+      <nav className={`font-cairo transition-all duration-300 z-50 ${getNavbarStyle()}`} style={{ marginTop: '-1px' }}>
+        <div className="container mx-auto px-2 pb-1" >
+          <div className="flex items-center justify-between relative  " >
+             <div className={`flex items-center ${isRTL ? "justify-start pl-0" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
 
-                </div>
-              </a>
+<a 
+  href="/" 
+  className={`flex items-center ${isRTL ? "flex-row-reverse" : "flex-row"}  gap-1 group`} 
+  onClick={handleHomeClick}
+>
+  <div className="relative ">
+    <img 
+      src="/images/logo.png" 
+      alt="Company Logo" 
+      className={`object-contain rounded-full ${isRTL ? 'h-16 w-20 md:w-36' : 'h-16 w-16 md:h-20 md:w-20'}`}
+    />
+  </div>
+
+  <div className="flex items-center">
+    <div className="w-1 h-8 md:h-12 bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
+  </div>
+
+  <div className={`${getTextColor()} transition-colors duration-300`}>
+    <div className="text-base md:text-lg font-bold ">
+      {t('nav.camname')}
+    </div>
+  </div>
+</a>
             </div>
+
+            {/* Mobile nav toggle */}
+
 
             <div className="flex-1 hidden md:block"></div>
 
