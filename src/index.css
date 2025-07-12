@@ -156,3 +156,7 @@ html[dir="rtl"] .text-right {
 .transition-dir {
   transition: all 0.3s ease-in-out;
 }
+.custom-gradient {
+  background: linear-gradient(to bottom, #3D4B9F, #5A63B0);
+  opacity: 0.9;
+}

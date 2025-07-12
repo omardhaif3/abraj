@@ -103,9 +103,23 @@ const Footer: React.FC = () => {
                 <a href="https://www.instagram.com/marketingabraj1/?igsh=NmZ6ZmVqdnB6aGhi#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Instagram">
                   <FaInstagram size={20} />
                 </a>
-                <a href="https://x.com/aalwatania40994?s=11" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Twitter">
-                  <FaTwitter size={20} />
-                </a>
+                <a
+  href="https://x.com/aalwatania40994?s=11"
+  className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors"
+  aria-label="X (Twitter)"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 1227"
+    fill="currentColor"
+    className="w-5 h-5"
+  >
+    <path d="M714 658l486-658h-114l-389 527-309-527H0l509 862L37 1227h114l398-540 317 540h268L714 658z" />
+  </svg>
+</a>
+
                 <a href="https://www.linkedin.com/in/%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D8%A8%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-04857a242/" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="LinkedIn">
                   <FaLinkedin size={20} />
                 </a>

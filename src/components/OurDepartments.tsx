@@ -31,7 +31,7 @@ const OurDepartments: React.FC = () => {
   return (
     <>
       <section id="departments" className="py-0 relative">
-        <div className="animated-blue-bg py-16">
+        <div className="animated-blue-bg py-16 pt-32">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className={`text-4xl font-bold text-black mb-12 text-center ${isRTL ? 'font-cairo' : ''}`}>
               {t('departments.title')}

@@ -12,7 +12,8 @@ const translations: Translations = {
     'nav.contact': 'Contact Us',
     'nav.branches': 'Our Branches',
   'nav.projects': 'Our Projects',
-    
+  'nav.ourDepartments': 'Our Departments',
+
     // Home
     'home.learnMore': 'Download Profile',
     'home.slogan1': 'With a sharp vision and ambitious outlook, we navigate through every detail to achieve outstanding results with you.',
@@ -230,6 +231,7 @@ const translations: Translations = {
     
     'nav.branches': 'فروعنا',
   'nav.projects': 'مشاريعنا',
+  'nav.ourDepartments': 'أقسامنا',
     // Home
     'home.learnMore':'الكتاب التعريفي',
     'home.slogan1': 'شريكك في الجودة منذ اللحظة الأولى',

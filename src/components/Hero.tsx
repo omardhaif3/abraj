@@ -221,9 +221,9 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <img
-          src="/images/logo1.png"
+          src="/images/logo.png"
           alt="Plan Eight"
-          className="h-36 w-36 rounded-full object-cover border-4 border-white border-opacity-20 shadow-lg"
+          className="h-48 w-48 rounded-full object-cover border-4 border-white border-opacity-20 shadow-lg"
         />
       </motion.div>
 

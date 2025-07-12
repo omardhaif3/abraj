@@ -22,6 +22,7 @@ import OurDepartments from './components/OurDepartments';
 import ChairmanMessagePage from './pages/ChairmanMessagePage';
 import BranchesPage from './pages/OurBranches';
 import ProjectsPage from './pages/OurProjects';
+
 function MainPageContent() {
   const location = useLocation();
 
@@ -44,12 +45,22 @@ function MainPageContent() {
       {/* Removed OurServices as per the request */}
       <About />
       <Work />
-       <OurDepartments />
+       
       <CertificationsAwards />
       <Partners />
       {/* <Contact /> */}
       <Footer />
     </div>
+  );
+}
+
+function OurDepartmentsPage() {
+  return (
+    <>
+      <Navbar />
+      <OurDepartments />
+      <Footer />
+    </>
   );
 }
 
@@ -82,6 +93,7 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
          <Route path="/branches" element={<BranchesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/our-departments" element={<OurDepartmentsPage />} />
       </Routes>
       <WhatsappButton className={positionClass} />
     </>

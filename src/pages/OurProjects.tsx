@@ -47,7 +47,8 @@ const OurProjects = () => {
   return (
     <div className="min-h-screen bg-gray-50">
        <Navbar />
-      <div className="bg-gradient-to-br from-[#00529B] to-[#007BFF] text-white py-32 pb-8">
+      <div className=" text-white py-32 pb-8" style={{
+                    background: "linear-gradient(to right, #3D4B9F, #5A63B0)"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

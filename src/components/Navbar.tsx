@@ -18,16 +18,17 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const menuDirectionRef = useRef(isRTL);
   const lastScrollY = useRef(0);
-
+const [openDropdownKey, setOpenDropdownKey] = useState<string | null>(null);
   const navItems = [
     { key: "nav.home", to: "/" },
-    {
+      {
       key: "nav.about",
       to: "/about",
       dropdown: [
         { key: "nav.aboutAbrag", to: "/about-abrag", label: "About Abrag" },
         { key: "nav.chairmanMessage", to: "/chairman-message", label: "Chairman Message" },
         { key: "nav.boardOfDirectors", to: "/board-of-directors", label: "Board of Directors" },
+        { key: "departments.title", to: "/our-departments", label: "Our Departments" },
       ],
     },
     { key: "nav.work", to: "/services" },
@@ -75,7 +76,7 @@ const Navbar: React.FC = () => {
   // Get text color based on scroll position and current page
   const getTextColor = () => {
     if (isMenuOpen) return "text-white";
-    if (isScrolled || location.pathname !== "/") return "text-gray-900";
+    if (isScrolled || location.pathname !== "/") return "text-white";
     return "text-white";
   };
 
@@ -86,7 +87,7 @@ const Navbar: React.FC = () => {
     }
     
    if (isScrolled || location.pathname !== "/") {
-  return "bg-blue-200/80 backdrop-blur-md shadow-sm";
+  return "custom-gradient backdrop-blur-md shadow-sm";
 }
 
     
@@ -97,12 +98,12 @@ const Navbar: React.FC = () => {
     
      <div className="fixed top-0 left-0 right-0 z-50 ">
       {/* TopBar with blur effect */}
-      <div className={`${isScrolled || location.pathname !== "/" ? "bg-blue-200/80 backdrop-blur-md " : "bg-transparent"} transition-all duration-300`} style={{ zIndex: 60 }}>
+      <div className={`${isScrolled || location.pathname !== "/" ? "custom-gradient backdrop-blur-md " : "bg-transparent"} transition-all duration-300 `} style={{ zIndex: 60 }}>
         <TopBar  />
       </div>
 
       <nav className={`font-cairo transition-all duration-300 z-50 ${getNavbarStyle()}`} style={{ marginTop: '-1px' }}>
-        <div className="container mx-auto px-2 pb-1" >
+        <div className="container mx-auto px-3 pb-1" >
           <div className="flex items-center justify-between relative  " >
              <div className={`flex items-center ${isRTL ? "justify-start pl-0" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
 
@@ -140,71 +141,91 @@ const Navbar: React.FC = () => {
             <div className="hidden md:flex items-center space-x-1 rtl:space-x-reverse justify-center flex-1">
               <ul className={`flex space-x-6 rtl:space-x-reverse ${isRTL ? "ml-8" : "mr-8"}`}>
                 {navItems.map((item) => (
-                  <li 
-                    key={item.key} 
-                    className="relative group"
-                  >
-                    {item.dropdown ? (
-                      <>
-                        <span className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 group whitespace-nowrap cursor-pointer`}>
-                          {t(item.key)}
-                          <svg
-                            className="inline-block ml-1 w-3 h-3 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
-                          </svg>
-                        </span>
-                        <ul className="absolute left-0 mt-2 w-56 bg-white bg-opacity-95 backdrop-blur-lg rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 overflow-hidden">
-                          {item.dropdown.map((subItem) => (
-                            <li key={subItem.key}>
-                              <Link
-                                to={subItem.to}
-                                className="flex items-center px-4 py-3 text-gray-800 hover:bg-blue-50 whitespace-nowrap transition-all duration-300"
-                              >
-                                <span>
-                                  {subItem.key === "nav.aboutAbrag" ? (
-                                    isRTL ? "عن أبراج" : "About Abraj"
-                                  ) : subItem.key === "nav.chairmanMessage" ? (
-                                    isRTL ? "كلمة الرئيس" : "Chairman Message"
-                                  ) : subItem.key === "nav.boardOfDirectors" ? (
-                                    isRTL ? "مجلس الإدارة" : "Board of Directors"
-                                  ) : (
-                                    subItem.label
-                                  )}
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    ) : item.key === "nav.home" ? (
-                      <a
-                        href={item.to}
-                        onClick={handleHomeClick}
-                        className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 group whitespace-nowrap`}
-                      >
-                        <span className="relative">
-                          {t(item.key)}
-                          <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
-                        </span>
-                      </a>
-                    ) : (
-                      <Link
-                        to={item.to}
-                        className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 group whitespace-nowrap`}
-                      >
-                        <span className="relative">
-                          {t(item.key)}
-                          <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
-                        </span>
-                      </Link>
-                    )}
-                  </li>
+                  <li key={item.key} className="relative">
+  {item.dropdown ? (
+    <>
+      <span
+  onClick={() =>
+    setOpenDropdownKey(openDropdownKey === item.key ? null : item.key)
+  }
+  className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 cursor-pointer select-none whitespace-nowrap`}
+>
+        {t(item.key)}
+        <svg
+          className={`inline-block ml-1 w-3 h-3 transition-transform ${
+            openDropdownKey === item.key ? "rotate-180" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </span>
+
+      <ul
+        className={`absolute start-0 mt-2 w-56 bg-white bg-opacity-95 backdrop-blur-lg rounded-xl shadow-xl transition-all duration-300 z-50 overflow-hidden ${
+          openDropdownKey === item.key
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {item.dropdown.map((subItem) => (
+          <li key={subItem.key}>
+            <Link
+              to={subItem.to}
+              onClick={() => setOpenDropdownKey(null)}
+              className="flex items-center px-4 py-3 text-gray-800 hover:bg-blue-50 whitespace-nowrap transition-all duration-300"
+            >
+              <span>
+                {subItem.key === "nav.aboutAbrag"
+                  ? isRTL
+                    ? "عن أبراج"
+                    : "About Abraj"
+                  : subItem.key === "nav.chairmanMessage"
+                  ? isRTL
+                    ? "كلمة الرئيس"
+                    : "Chairman Message"
+                  : subItem.key === "nav.boardOfDirectors"
+                  ? isRTL
+                    ? "مجلس الإدارة"
+                    : "Board of Directors"
+                  : subItem.key === "departments.title"
+                  ? isRTL
+                    ? "أقسامنا"
+                    : "Our Departments"
+                  : subItem.label}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  ) : item.key === "nav.home" ? (
+    <a
+      href={item.to}
+      onClick={handleHomeClick}
+      className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 whitespace-nowrap`}
+    >
+      <span className="relative">
+        {t(item.key)}
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
+      </span>
+    </a>
+  ) : (
+    <Link
+      to={item.to}
+      className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 whitespace-nowrap`}
+    >
+      <span className="relative">
+        {t(item.key)}
+        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
+      </span>
+    </Link>
+  )}
+</li>
                 ))}
               </ul>
               
@@ -251,7 +272,7 @@ const Navbar: React.FC = () => {
         style={{
           width: "85vw",
           maxWidth: "320px",
-          backgroundColor: "rgba(59, 130, 246, 0.95)",
+           background: "linear-gradient(to bottom, #3D4B9F, #5A63B0)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
           transform: isMenuOpen

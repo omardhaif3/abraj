@@ -183,10 +183,6 @@ const cardItems = [
                     ease: "easeInOut"
                   }}
                 >
-                  <Rocket 
-                    size={40}
-                    className="text-blue-600 transition-all duration-300 hover:text-blue-800"
-                  />
                 </motion.div>
                 <motion.h2 
                   className={`text-5xl font-bold bg-clip-text p-5 text-transparent bg-gradient-to-r from-blue-400 to-blue-800 ${isRTL ? 'font-cairo' : ''}`}
@@ -226,7 +222,9 @@ const cardItems = [
                 <motion.div 
                   key={index}
                   variants={itemVariants}
-                  className={`bg-gradient-to-br from-blue-900 to-blue-700 p-8 rounded-2xl shadow-2xl ${isRTL ? 'text-left' : 'text-left'}`}
+                  className={` p-8 rounded-2xl shadow-2xl ${isRTL ? 'text-left' : 'text-left'}`} style={{
+                    background: "linear-gradient(to right, #3D4B9F, #5A63B0)" // slightly lighter second tone
+                  }}
                   whileHover={{
                     scale: 1.03,
                     boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.25)"
