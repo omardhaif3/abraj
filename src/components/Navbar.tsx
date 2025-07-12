@@ -94,16 +94,16 @@ const Navbar: React.FC = () => {
 
   return (
     
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className={`fixed top-0 left-0 right-0  z-50 ${isRTL ? "": ""}`} >
       {/* TopBar with blur effect */}
-      <div className={`${isScrolled || location.pathname !== "/" ? "bg-blue-200/80 backdrop-blur-md" : "bg-transparent"} transition-all duration-300 overflow-visible`} style={{ zIndex: 60 }}>
+      <div className={`${isScrolled || location.pathname !== "/" ? "bg-blue-200/80 backdrop-blur-md" : "bg-transparent"} transition-all duration-300`} style={{ zIndex: 60 }}>
         <TopBar  />
       </div>
       
       <nav className={`font-cairo transition-all duration-300 ${getNavbarStyle()}`}>
         <div className="container mx-auto px-2 pb-1 pt-0" >
           <div className="flex items-center justify-between relative">
-            <div className="flex items-center justify-start w-full md:w-64 ">
+            <div className="flex items-center justify-start w-full md:w-64  " style={{ marginRight:0  }}>
               <a 
                 href="/" 
                 className={`flex items-center ${isRTL ? "flex-row-reverse" : ""} group`} 

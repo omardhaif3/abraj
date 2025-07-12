@@ -1,6 +1,7 @@
 /* Background.css */
 body {
   margin: auto;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
   background: linear-gradient(315deg, #f8f9fa 98%,#f8f9fa 98%, #f8f9fa  98%, #f8f9fa 98%);

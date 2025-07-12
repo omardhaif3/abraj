@@ -29,6 +29,7 @@ html {
 }
 
 body {
+    overflow-x: hidden !important;
   font-family: 'Roboto', sans-serif;
   color: var(--text-primary);
   background-color: var(--background);
