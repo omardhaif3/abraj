@@ -1,16 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { X } from "lucide-react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 import TopBar from "./TopBar";
 import { useTranslation } from "../hooks/useTranslation";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isRTL } = useLanguage();
   const t = useTranslation();
@@ -18,17 +17,17 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const menuDirectionRef = useRef(isRTL);
   const lastScrollY = useRef(0);
-const [openDropdownKey, setOpenDropdownKey] = useState<string | null>(null);
+
   const navItems = [
     { key: "nav.home", to: "/" },
-      {
+    {
       key: "nav.about",
       to: "/about",
       dropdown: [
-        { key: "nav.aboutAbrag", to: "/about-abrag", label: "About Abrag" },
-        { key: "nav.chairmanMessage", to: "/chairman-message", label: "Chairman Message" },
-        { key: "nav.boardOfDirectors", to: "/board-of-directors", label: "Board of Directors" },
-        { key: "departments.title", to: "/our-departments", label: "Our Departments" },
+        { key: "nav.aboutAbrag", to: "/about-abrag", label: t("nav.aboutAbrag") },
+        { key: "nav.chairmanMessage", to: "/chairman-message", label: t("nav.chairmanMessage") },
+        { key: "nav.boardOfDirectors", to: "/board-of-directors", label: t("nav.boardOfDirectors") },
+        { key: "departments.title", to: "/our-departments", label: t("departments.title") },
       ],
     },
     { key: "nav.work", to: "/services" },
@@ -37,287 +36,147 @@ const [openDropdownKey, setOpenDropdownKey] = useState<string | null>(null);
     { key: "nav.projects", to: "/projects" },
   ];
 
-  // Optimized scroll handler
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Only update state if scroll position changes significantly
-      if (Math.abs(currentScrollY - lastScrollY.current) > 10) {
-        setIsScrolled(currentScrollY > 20);
-        lastScrollY.current = currentScrollY;
+      const y = window.scrollY;
+      if (Math.abs(y - lastScrollY.current) > 10) {
+        setIsScrolled(y > 20);
+        lastScrollY.current = y;
       }
     };
-    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    menuDirectionRef.current = isRTL;
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
     if (location.pathname === "/") {
-      e.preventDefault();
-      const heroSection = document.getElementById("home");
-      if (heroSection) {
-        heroSection.scrollIntoView({ behavior: "smooth" });
-      }
-      setIsMenuOpen(false);
+      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
     } else {
-      e.preventDefault();
       navigate("/", { state: { scrollToHero: true } });
-      setIsMenuOpen(false);
     }
   };
 
-  // Get text color based on scroll position and current page
-  const getTextColor = () => {
-    if (isMenuOpen) return "text-white";
-    if (isScrolled || location.pathname !== "/") return "text-white";
-    return "text-white";
-  };
-
-  // Get navbar background style
-  const getNavbarStyle = () => {
-    if (isMenuOpen) {
-      return "bg-gradient-to-b from-blue-900/95 to-indigo-900/95 backdrop-blur-xl";
-    }
-    
-   if (isScrolled || location.pathname !== "/") {
-  return "custom-gradient backdrop-blur-md shadow-sm";
-}
-
-    
-    return "bg-transparent";
-  };
+  const getTextColor = () => "text-white";
+  const getNavbarStyle = () => isMenuOpen
+    ? "bg-gradient-to-b from-blue-900/95 to-indigo-900/95 backdrop-blur-xl"
+    : isScrolled || location.pathname !== "/"
+    ? "custom-gradient backdrop-blur-md shadow-sm"
+    : "bg-transparent";
 
   return (
-    
-     <div className="fixed top-0 left-0 right-0 z-50 ">
-      {/* TopBar with blur effect */}
-      <div className={`${isScrolled || location.pathname !== "/" ? "custom-gradient backdrop-blur-md " : "bg-transparent"} transition-all duration-300 `} style={{ zIndex: 60 }}>
-        <TopBar  />
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <div className={`${isScrolled || location.pathname !== "/" ? "custom-gradient backdrop-blur-md" : "bg-transparent"} transition-all duration-300`} style={{ zIndex: 60 }}>
+        <TopBar />
       </div>
 
-      <nav className={`font-cairo transition-all duration-300 z-50 ${getNavbarStyle()}`} style={{ marginTop: '-1px' }}>
-        <div className="container mx-auto px-3 pb-1" >
-          <div className="flex items-center justify-between relative  " >
-             <div className={`flex items-center ${isRTL ? "justify-start pl-0" : "justify-start pl-0"} w-64 md:w-64 w-full md:pl-0  `}>
+      <nav className={`font-cairo transition-all duration-300 z-50 ${getNavbarStyle()}`} style={{ marginTop: "-1px" }}>
+        <div className="container mx-auto px-3 pb-1">
+          <div className="flex items-center justify-between">
+            <a href="/" className={`flex items-center ${isRTL ? "flex-row-reverse" : "flex-row"} gap-1 group`} onClick={handleHomeClick}>
+              <img src="/images/logo.png" alt="Logo" className={`rounded-full object-contain ${isRTL ? "h-16 w-16 md:w-20 md:h-20" : "h-16 w-16 md:h-20 md:w-20"}`} />
+              <div className="w-1 h-8 md:h-12 bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
+              <div className={`${getTextColor()} text-base md:text-lg font-bold`}>{t("nav.camname")}</div>
+            </a>
 
-<a 
-  href="/" 
-  className={`flex items-center ${isRTL ? "flex-row-reverse" : "flex-row"}  gap-1 group`} 
-  onClick={handleHomeClick}
->
-  <div className="relative ">
-    <img 
-      src="/images/logo.png" 
-      alt="Company Logo" 
-      className={`object-contain rounded-full ${isRTL ? 'h-16 w-20 md:w-36' : 'h-16 w-16 md:h-20 md:w-20'}`}
-    />
-  </div>
-
-  <div className="flex items-center">
-    <div className="w-1 h-8 md:h-12 bg-gradient-to-b from-transparent via-blue-400 to-transparent"></div>
-  </div>
-
-  <div className={`${getTextColor()} transition-colors duration-300`}>
-    <div className="text-base md:text-lg font-bold ">
-      {t('nav.camname')}
-    </div>
-  </div>
-</a>
-            </div>
-
-            {/* Mobile nav toggle */}
-
-
-            <div className="flex-1 hidden md:block"></div>
-
-            {/* Desktop nav */}
-            <div className="hidden md:flex items-center space-x-1 rtl:space-x-reverse justify-center flex-1">
-              <ul className={`flex space-x-6 rtl:space-x-reverse ${isRTL ? "ml-8" : "mr-8"}`}>
-                {navItems.map((item) => (
-                  <li key={item.key} className="relative">
-  {item.dropdown ? (
-    <>
-      <span
-  onClick={() =>
-    setOpenDropdownKey(openDropdownKey === item.key ? null : item.key)
-  }
-  className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 cursor-pointer select-none whitespace-nowrap`}
->
-        {t(item.key)}
-        <svg
-          className={`inline-block ml-1 w-3 h-3 transition-transform ${
-            openDropdownKey === item.key ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </span>
-
-      <ul
-        className={`absolute start-0 mt-2 w-56 bg-white bg-opacity-95 backdrop-blur-lg rounded-xl shadow-xl transition-all duration-300 z-50 overflow-hidden ${
-          openDropdownKey === item.key
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      >
-        {item.dropdown.map((subItem) => (
-          <li key={subItem.key}>
-            <Link
-              to={subItem.to}
-              onClick={() => setOpenDropdownKey(null)}
+            <div className="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
+              {navItems.map((item) => (
+                <div key={item.key} className="relative group">
+                  {item.dropdown ? (
+                    <>
+                      <span
+                        onClick={() => setIsDropdownOpen(prev => prev === item.key ? null : item.key)}
+                        className={`${getTextColor()} cursor-pointer text-sm md:text-lg font-semibold py-2`}
+                      >
+                        {t(item.key)}
+                        <svg className={`inline w-3 h-3 ml-1 transition-transform ${isDropdownOpen === item.key ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </span>
+                      <ul className={`absolute start-0 mt-2 w-56 bg-white bg-opacity-95 backdrop-blur-lg rounded-xl shadow-xl transition-opacity ${isDropdownOpen === item.key ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+                        {item.dropdown.map(sub => (
+                          <li key={sub.key}>
+                            <Link
+              to={sub.to}
+              onClick={() => setIsDropdownOpen(null)}
               className="flex items-center px-4 py-3 text-gray-800 hover:bg-blue-50 whitespace-nowrap transition-all duration-300"
             >
               <span>
-                {subItem.key === "nav.aboutAbrag"
+                {sub.key === "nav.aboutAbrag"
                   ? isRTL
                     ? "عن أبراج"
                     : "About Abraj"
-                  : subItem.key === "nav.chairmanMessage"
+                  : sub.key === "nav.chairmanMessage"
                   ? isRTL
                     ? "كلمة الرئيس"
                     : "Chairman Message"
-                  : subItem.key === "nav.boardOfDirectors"
+                  : sub.key === "nav.boardOfDirectors"
                   ? isRTL
                     ? "مجلس الإدارة"
                     : "Board of Directors"
-                  : subItem.key === "departments.title"
+                  : sub.key === "departments.title"
                   ? isRTL
                     ? "أقسامنا"
                     : "Our Departments"
-                  : subItem.label}
+                  : sub.label}
               </span>
             </Link>
-          </li>
-        ))}
-      </ul>
-    </>
-  ) : item.key === "nav.home" ? (
-    <a
-      href={item.to}
-      onClick={handleHomeClick}
-      className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 whitespace-nowrap`}
-    >
-      <span className="relative">
-        {t(item.key)}
-        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
-      </span>
-    </a>
-  ) : (
-    <Link
-      to={item.to}
-      className={`${getTextColor()} flex items-center text-sm md:text-lg font-semibold transition duration-300 ease-in-out py-2 whitespace-nowrap`}
-    >
-      <span className="relative">
-        {t(item.key)}
-        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 group-hover:w-full"></span>
-      </span>
-    </Link>
-  )}
-</li>
-                ))}
-              </ul>
-              
-              <div className="flex items-center space-x-3 rtl:space-x-reverse ml-4">
-                <LanguageToggle />
-              </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <Link
+                      to={item.to}
+                      onClick={item.key === "nav.home" ? handleHomeClick : () => setIsDropdownOpen(null)}
+                      className={`${getTextColor()} text-sm md:text-lg font-semibold py-2`}
+                    >
+                      {t(item.key)}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <LanguageToggle />
             </div>
 
-            {/* Mobile toggle */}
-            <div className="flex items-center space-x-4 rtl:space-x-reverse md:hidden">
+            <div className="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
               <LanguageToggle />
-              
-              <button
-                onClick={toggleMenu}
-                className="relative"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? (
-                  <X size={24} className={getTextColor()} />
-                ) : (
-                  <GiHamburgerMenu size={24} className={getTextColor()} />
-                )}
+              <button onClick={() => { menuDirectionRef.current = isRTL; setIsMenuOpen(!isMenuOpen); }}>
+                {isMenuOpen ? <X size={24} className={getTextColor()} /> : <GiHamburgerMenu size={24} className={getTextColor()} />}
               </button>
             </div>
           </div>
-        </div> 
+        </div>
       </nav>
 
-      {/* Mobile menu backdrop */}
-      <div
-        className={`fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${
-          isMenuOpen 
-            ? "bg-black/50 backdrop-blur-sm pointer-events-auto" 
-            : "bg-black/0 backdrop-blur-0 pointer-events-none"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      />
+      <div className={`fixed inset-0 z-40 ${isMenuOpen ? "bg-black/50 backdrop-blur-sm" : "pointer-events-none"}`} onClick={() => setIsMenuOpen(false)} />
 
-      {/* Mobile menu panel */}
-      <div
-        className={`fixed top-0 bottom-0 z-50 transform transition-transform duration-300 ease-in-out ${
-          menuDirectionRef.current ? "right-0" : "left-0"
-        }`}
-        style={{
-          width: "85vw",
-          maxWidth: "320px",
-           background: "linear-gradient(to bottom, #3D4B9F, #5A63B0)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          transform: isMenuOpen
-            ? "translateX(0)"
-            : menuDirectionRef.current
-            ? "translateX(100%)"
-            : "translateX(-100%)",
-        }}
-      >
+      <div className={`fixed top-0 bottom-0 z-50 transition-transform ${menuDirectionRef.current ? "right-0" : "left-0"}`} style={{
+        width: "85vw",
+        maxWidth: "320px",
+        background: "linear-gradient(to bottom, #3D4B9F, #5A63B0)",
+        backdropFilter: "blur(12px)",
+        transform: isMenuOpen ? "translateX(0)" : menuDirectionRef.current ? "translateX(100%)" : "translateX(-100%)"
+      }}>
         <div className="p-5 pt-16 h-full flex flex-col">
-          <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'}`}>
-            <button 
-              onClick={() => setIsMenuOpen(false)}
-              className="text-white p-1 rounded-full hover:bg-white/20"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          
-          <div className="flex-1 overflow-y-auto py-4">
-            <ul className="space-y-2">
-              {navItems.map((item) => (
-                <li key={item.key} className="mb-1">
-                  {item.dropdown ? (
-                    <>
-                      <button
-                        onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
-                        className="flex items-center justify-between w-full text-white text-base font-medium py-2 px-4 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
-                      >
-                        <div>{t(item.key)}</div>
-                        <svg
-                          className={`ml-2 w-5 h-5 transition-transform duration-300 ${
-                            isAboutDropdownOpen ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </button>
-                      {isAboutDropdownOpen && (
-                        <ul className={`pl-4 mt-2 space-y-1 ${isRTL ? 'border-r-2 border-white/20 pr-3' : 'border-l-2 border-white/20 pl-3'}`}>
+          <button onClick={() => setIsMenuOpen(false)} className={`absolute top-3 ${isRTL ? "left-3" : "right-3"} text-white p-1 rounded-full hover:bg-white/20`}><X size={24} /></button>
+          <ul className="space-y-2 overflow-y-auto">
+            {navItems.map((item) => (
+              <li key={item.key}>
+                {item.dropdown ? (
+                  <>
+                    <button
+                      onClick={() => setIsDropdownOpen(prev => prev === item.key ? null : item.key)}
+                      className="w-full flex justify-between items-center text-white py-2 px-4 rounded-xl bg-white/10 hover:bg-white/20"
+                    >
+                      {t(item.key)}
+                      <svg className={`w-5 h-5 transition-transform ${isDropdownOpen === item.key ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {isDropdownOpen === item.key && (
+                      <ul className={`mt-2 space-y-1 ${isRTL ? "border-r-2 pr-3" : "border-l-2 pl-3"} border-white/20`}>
                           {item.dropdown.map((subItem) => (
                             <li key={subItem.key}>
                               <Link
@@ -337,35 +196,19 @@ const [openDropdownKey, setOpenDropdownKey] = useState<string | null>(null);
                                   subItem.label
                                 )}
                               </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  ) : item.key === "nav.home" ? (
-                    <a
-                      href={item.to}
-                      onClick={(e) => {
-                        handleHomeClick(e);
-                        setIsMenuOpen(false);
-                      }}
-                      className="flex items-center py-2 px-4 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
-                    >
-                      <span className="text-white text-base font-medium">{t(item.key)}</span>
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.to}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center py-2 px-4 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
-                    >
-                      <span className="text-white text-base font-medium">{t(item.key)}</span>
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Link to={item.to} onClick={item.key === "nav.home" ? handleHomeClick : () => setIsMenuOpen(false)} className="block py-2 px-4 text-white bg-white/10 hover:bg-white/20 rounded-xl">
+                    {t(item.key)}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

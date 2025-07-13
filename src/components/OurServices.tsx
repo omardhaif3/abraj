@@ -51,7 +51,7 @@ return (
           <h3 className={`text-3xl font-bold text-white ${isRTL ? 'font-cairo' : ''}`}>
             {t(item.title)}
           </h3>
-          <p className="mt-4 text-white text-lg leading-relaxed">
+          <p className="mt-4 text-white text-justify text-lg leading-relaxed">
             {t(item.description)}
           </p>
         

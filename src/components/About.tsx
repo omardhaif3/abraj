@@ -89,7 +89,7 @@ const About: React.FC = () => {
                 variants={fadeInVariants}
                 className="w-full max-w-3xl bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-30 shadow-xl"
               >
-                <p className={`text-blue-900 text-lg leading-relaxed ${isRTL ? 'font-cairo text-left' : 'text-left'}`}>
+                <p className={`text-blue-900 text-lg  text-justify leading-relaxed ${isRTL ? 'font-cairo ' : ''}`}>
                   {t('about.text')}
                 </p>
               </motion.div>
@@ -108,7 +108,7 @@ const About: React.FC = () => {
                     <h3 className={`text-2xl font-semibold text-white ${isRTL ? 'font-cairo' : ''}`}>{t(item.titleKey)}</h3>
                   </div>
                   <div className="h-1 w-20 bg-blue-400 mb-4 ml-14"></div>
-                  <p className={`text-blue-100 ${isRTL ? 'font-cairo' : ''}`}>{renderMultilineText(t(item.descKey))}</p>
+                  <p className={`text-blue-100 text-justify ${isRTL ? 'font-cairo' : ''}`}>{renderMultilineText(t(item.descKey))}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -135,7 +135,7 @@ const About: React.FC = () => {
                           <h3 className={`text-xl font-semibold text-white ${isRTL ? 'font-cairo' : ''}`}>{t(item.headerKey)}</h3>
                         </div>
                         <div className="h-1 w-12 bg-blue-300 mb-4 ml-14"></div>
-                        <p className={`text-blue-100 flex-grow ${isRTL ? 'font-cairo' : ''}`}>{renderMultilineText(t(item.descriptionKey))}</p>
+                        <p className={`text-blue-100 text-justify flex-grow ${isRTL ? 'font-cairo' : ''}`}>{renderMultilineText(t(item.descriptionKey))}</p>
                       </div>
                     </div>
                   </motion.div>
