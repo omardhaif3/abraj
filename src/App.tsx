@@ -1,7 +1,7 @@
 
 import './animated-background.css';
 import Background from './components/Background';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -22,6 +22,8 @@ import OurDepartments from './components/OurDepartments';
 import ChairmanMessagePage from './pages/ChairmanMessagePage';
 import BranchesPage from './pages/OurBranches';
 import ProjectsPage from './pages/OurProjects';
+
+import SplashScreen from './components/SplashScreen';
 
 function MainPageContent() {
   const location = useLocation();
@@ -45,7 +47,7 @@ function MainPageContent() {
       {/* Removed OurServices as per the request */}
       <About />
       <Work />
-       
+
       <CertificationsAwards />
       <Partners />
       {/* <Contact /> */}
@@ -69,6 +71,20 @@ function App() {
   useEffect(() => {
     document.title = 'أبراج الوطنية للتشغيل والصيانة والموارد البشرية';
   }, []);
+
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 4000); // match splash screen duration
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return <SplashScreen />;
+  }
 
   return (
     <LanguageProvider>
