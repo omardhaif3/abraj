@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
@@ -22,6 +22,18 @@ const OurServices: React.FC<OurServicesProps> = ({ limit }) => {
   const t = useTranslation();
   const { isRTL } = useLanguage();
   const displayedItems = limit ? workItems.slice(0, limit) : workItems;
+
+  // State to track if tilt should be disabled (true on mobile)
+  const [disableTilt, setDisableTilt] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDisableTilt(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
 return (
   <section id="work" className="py-0 relative">
@@ -99,22 +111,22 @@ return (
                   },
                 }}
               >
-                <TiltWrapper className="relative group transform transition duration-500 hover:scale-[1.03] hover:-translate-y-1">
-                  <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/10  backdrop-blur-lg" style={{
-                    background: "linear-gradient(to right, #3D4B9F, #5A63B0)"}}>
-                    <img
+              <TiltWrapper disableTilt={disableTilt} className="relative group transform transition duration-500 hover:scale-[1.03] hover:-translate-y-1">
+                <div className="relative rounded-3xl overflow-hidden shadow-xl border border-white/10  backdrop-blur-lg" style={{
+                  background: "linear-gradient(to right, #3D4B9F, #5A63B0)"}}>
+                  <img
   src={item.image}
   alt={t(item.title)}
   className="w-full h-60 object-cover object-top transition-transform duration-700 group-hover:scale-110"
 />
 
-                    <div className="p-6 text-center text-white">
-                      <h3 className="text-2xl font-bold mb-2">{t(item.title)}</h3>
-                      <p className="text-base opacity-90">{t(item.description)}</p>
-                    </div>
-                    <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/10 rounded-full blur-2xl animate-pulse" />
+                  <div className="p-6 text-center text-white">
+                    <h3 className="text-2xl font-bold mb-2">{t(item.title)}</h3>
+                    <p className="text-base opacity-90">{t(item.description)}</p>
                   </div>
-                </TiltWrapper>
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/10 rounded-full blur-2xl animate-pulse" />
+                </div>
+              </TiltWrapper>
               </motion.div>
             ))}
         </motion.div>

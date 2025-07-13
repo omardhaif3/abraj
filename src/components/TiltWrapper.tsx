@@ -5,13 +5,19 @@ interface TiltProps {
   children: React.ReactNode;
   options?: any;
   className?: string;
+  disableTilt?: boolean;
 }
 
-const TiltWrapper: React.FC<TiltProps> = ({ children, options, className }) => {
+const TiltWrapper: React.FC<TiltProps> = ({ children, options, className, disableTilt }) => {
   const tiltRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (tiltRef.current) {
+      if (disableTilt) {
+        // Destroy tilt effect if disableTilt is true
+        (tiltRef.current as any).vanillaTilt?.destroy();
+        return;
+      }
       VanillaTilt.init(tiltRef.current, {
         max: 15,
         speed: 400,
@@ -27,7 +33,7 @@ const TiltWrapper: React.FC<TiltProps> = ({ children, options, className }) => {
         (tiltRef.current as any).vanillaTilt?.destroy();
       }
     };
-  }, [options]);
+  }, [options, disableTilt]);
 
   return <div ref={tiltRef} className={className}>{children}</div>;
 };
