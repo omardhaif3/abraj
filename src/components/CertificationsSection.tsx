@@ -71,7 +71,7 @@ const CertificationsSection = () => {
                 
                 <div className="flex items-center text-gray-600 mb-3">
                   <Building className="w-4 h-4 mr-2 text-[#007BFF]" />
-                  <span className="text-sm font-medium">{cert.organization}</span>
+                  <span className="text-sm font-medium">{t(`certifications.organization.${cert.organization}`) || cert.organization}</span>
                 </div>
                 
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">

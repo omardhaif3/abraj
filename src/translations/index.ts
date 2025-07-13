@@ -200,6 +200,43 @@ const translations: Translations = {
   'projects.location': 'Location',
   'projects.featured': 'Featured',
 
+  'projects.luxuryResidentialDesc': 'Description of the Luxury Residential Project',
+'projects.luxuryResidential': 'Luxury Residential Complex',
+'projects.luxuryResidentialDetailed': 'Details of the Luxury Residential Project',
+'projects.luxuryResidentialChallenges': 'Challenges Faced in the Luxury Residential Project',
+'projects.luxuryResidentialSolution': 'Solutions Provided in the Luxury Residential Project',
+
+'projects.modernOfficeDesc': 'Description of the Modern Office Project',
+'projects.modernOffice': 'Modern Office',
+'projects.modernOfficeDetailed': 'Details of the Modern Office Project',
+'projects.modernOfficeChallenges': 'Challenges Faced in the Modern Office Project',
+'projects.modernOfficeSolution': 'Solutions Provided in the Modern Office Project',
+
+'projects.highwayBridgeDesc': 'Description of the Highway Bridge Project',
+'projects.highwayBridge': 'Highway Bridge',
+'projects.highwayBridgeDetailed': 'Details of the Highway Bridge Project',
+'projects.highwayBridgeChallenges': 'Challenges Faced in the Highway Bridge Project',
+'projects.highwayBridgeSolution': 'Solutions Provided in the Highway Bridge Project',
+
+'projects.manufacturingPlantDesc': 'Description of the Manufacturing Plant Project',
+'projects.manufacturingPlant': 'Manufacturing Plant',
+'projects.manufacturingPlantDetailed': 'Details of the Manufacturing Plant Project',
+'projects.manufacturingPlantChallenges': 'Challenges Faced in the Manufacturing Plant Project',
+'projects.manufacturingPlantSolution': 'Solutions Provided in the Manufacturing Plant Project',
+
+'projects.shoppingMallDesc': 'Description of the Shopping Mall Project',
+'projects.shoppingMall': 'Shopping Mall',
+'projects.shoppingMallDetailed': 'Details of the Shopping Mall Project',
+'projects.shoppingMallChallenges': 'Challenges Faced in the Shopping Mall Project',
+'projects.shoppingMallSolution': 'Solutions Provided in the Shopping Mall Project',
+
+'projects.affordableHousingDesc': 'Description of the Affordable Housing Project',
+'projects.affordableHousing': 'Affordable Housing',
+'projects.affordableHousingDetailed': 'Details of the Affordable Housing Project',
+'projects.affordableHousingChallenges': 'Challenges Faced in the Affordable Housing Project',
+'projects.affordableHousingSolution': 'Solutions Provided in the Affordable Housing Project',
+
+
   'certifications.title': 'Client Appreciation Certificates',
   'certifications.subtitle': 'Recognized and valued by our esteemed clients for exceptional construction services and project delivery',
   'certifications.viewCertificate': 'View Certificate',
@@ -217,7 +254,28 @@ const translations: Translations = {
   'certifications.infrastructureExcellenceDesc': 'Appreciation for superior engineering and construction of the Interstate 95 highway bridge.',
   'certifications.industrialExcellenceDesc': 'Recognition of excellent industrial construction services and successful facility expansion.',
   'certifications.commercialAwardDesc': 'Appreciation for innovative design and sustainable construction of the shopping mall.',
-  'certifications.communityExcellenceDesc': 'Acknowledgment of outstanding commitment to affordable housing and community-building initiatives.'
+  'certifications.communityExcellenceDesc': 'Acknowledgment of outstanding commitment to affordable housing and community-building initiatives.',
+
+  'certifications.excellenceinconstructionaward': 'Excellence in Construction Award',
+  'certifications.excellenceinconstructionawardDesc': 'Certificate of appreciation for outstanding construction quality and timely delivery of the Luxury Residential Complex project.',
+  'certifications.outstandingpartnershipcertificate': 'Outstanding Partnership Certificate',
+  'certifications.outstandingpartnershipcertificateDesc': 'Recognition of exceptional collaboration and delivery of the modern office tower to LEED Gold standards.',
+  'certifications.infrastructureexcellenceaward': 'Infrastructure Excellence Award',
+  'certifications.infrastructureexcellenceawardDesc': 'Certificate of appreciation for superior engineering and construction of the Interstate 95 Highway Bridge project.',
+  'certifications.industrialconstructionexcellence': 'Industrial Construction Excellence',
+  'certifications.industrialconstructionexcellenceDesc': 'Recognition for outstanding industrial construction services and successful facility expansion project completion.',
+  'certifications.commercialdevelopmentaward': 'Commercial Development Award',
+  'certifications.commercialdevelopmentawardDesc': 'Certificate of appreciation for innovative design and construction of the Shopping Mall Complex with sustainable features.',
+  'certifications.communityhousingexcellence': 'Community Housing Excellence',
+  'certifications.communityhousingexcellenceDesc': 'Acknowledgment of outstanding commitment to affordable housing and community-building initiatives.',
+
+  'certifications.organization.ManhattanPropertiesLLC': 'Manhattan Properties LLC',
+  'certifications.organization.ChicagoBusinessCenter': 'Chicago Business Center',
+  'certifications.organization.FloridaDepartmentofTransportation': 'Florida Department of Transportation',
+  'certifications.organization.AutoTechManufacturing': 'AutoTech Manufacturing',
+  'certifications.organization.PacificRetailGroup': 'Pacific Retail Group',
+  'certifications.organization.AustinHousingAuthority': 'Austin Housing Authority',
+
   },
   ar: {
     // Navigation
@@ -418,6 +476,38 @@ const translations: Translations = {
   'projects.location': 'الموقع',
   'projects.featured': 'مميز',
 
+
+  'projects.luxuryResidentialDesc': 'وصف المشروع السكني الفاخر',
+  'projects.luxuryResidential': 'المجمع السكني الفاخر',
+  'projects.luxuryResidentialDetailed': 'تفاصيل المشروع السكني الفاخر',
+  'projects.luxuryResidentialChallenges': 'التحديات التي واجهتنا في المشروع السكني الفاخر',
+  'projects.luxuryResidentialSolution': 'الحلول التي قدمناها في المشروع السكني الفاخر',
+  'projects.modernOfficeDesc': 'وصف المشروع المكتبي الحديث',
+  'projects.modernOffice': 'المكتب الحديث',
+  'projects.modernOfficeDetailed': 'تفاصيل المشروع المكتبي الحديث',
+  'projects.modernOfficeChallenges': 'التحديات التي واجهتنا في المشروع المكتبي الحديث',
+  'projects.modernOfficeSolution': 'الحلول التي قدمناها في المشروع المكتبي الحديث',
+  'projects.highwayBridgeDesc': 'وصف مشروع جسر الطريق السريع',
+  'projects.highwayBridge': 'جسر الطريق السريع',
+  'projects.highwayBridgeDetailed': 'تفاصيل مشروع جسر الطريق السريع',
+  'projects.highwayBridgeChallenges': 'التحديات التي واجهتنا في مشروع جسر الطريق السريع',
+  'projects.highwayBridgeSolution': 'الحلول التي قدمناها في مشروع جسر الطريق السريع',
+  'projects.manufacturingPlantDesc': 'وصف مشروع مصنع التصنيع',
+  'projects.manufacturingPlant': 'مصنع التصنيع',
+  'projects.manufacturingPlantDetailed': 'تفاصيل مشروع مصنع التصنيع',
+  'projects.manufacturingPlantChallenges': 'التحديات التي واجهتنا في مشروع مصنع التصنيع',
+  'projects.manufacturingPlantSolution': 'الحلول التي قدمناها في مشروع مصنع التصنيع',
+  'projects.shoppingMallDesc': 'وصف مشروع مركز التسوق',
+  'projects.shoppingMall': 'مركز التسوق',
+  'projects.shoppingMallDetailed': 'تفاصيل مشروع مركز التسوق',
+  'projects.shoppingMallChallenges': 'التحديات التي واجهتنا في مشروع مركز التسوق',
+  'projects.shoppingMallSolution': 'الحلول التي قدمناها في مشروع مركز التسوق',
+  'projects.affordableHousingDesc': 'وصف مشروع الإسكان الميسور',
+  'projects.affordableHousing': 'الإسكان الميسور',
+  'projects.affordableHousingDetailed': 'تفاصيل مشروع الإسكان الميسور',
+  'projects.affordableHousingChallenges': 'التحديات التي واجهتنا في مشروع الإسكان الميسور',
+  'projects.affordableHousingSolution': 'الحلول التي قدمناها في مشروع الإسكان الميسور',
+
   'certifications.title': 'شهادات تقدير العملاء',
   'certifications.subtitle': 'معترف بها ومقدرة من قبل عملائنا الكرام لخدمات البناء الاستثنائية وتسليم المشاريع',
   'certifications.viewCertificate': 'عرض الشهادة',
@@ -435,8 +525,35 @@ const translations: Translations = {
   'certifications.infrastructureExcellenceDesc': 'شهادة تقدير للهندسة المتفوقة وبناء جسر الطريق السريع Interstate 95.',
   'certifications.industrialExcellenceDesc': 'اعتراف بخدمات البناء الصناعي المتميزة وإنجاز مشروع توسيع المنشأة بنجاح.',
   'certifications.commercialAwardDesc': 'شهادة تقدير للتصميم المبتكر وبناء مجمع التسوق بميزات مستدامة.',
-  'certifications.communityExcellenceDesc': 'اعتراف بالالتزام الاستثنائي لتطوير الإسكان الميسور ومبادرات بناء المجتمع.'
+  'certifications.communityExcellenceDesc': 'اعتراف بالالتزام الاستثنائي لتطوير الإسكان الميسور ومبادرات بناء المجتمع.',
 
+  'certifications.excellenceinconstructionaward': 'جائزة التميز في البناء',
+'certifications.excellenceinconstructionawardDesc': 'شهادة تقدير لجودة البناء المتميزة وتسليم مشروع المجمع السكني الفاخر في الوقت المحدد.',
+
+'certifications.outstandingpartnershipcertificate': 'شهادة الشراكة المتميزة',
+'certifications.outstandingpartnershipcertificateDesc': 'اعتراف بالتعاون الاستثنائي وتسليم برج المكتب الحديث وفق معايير LEED Gold.',
+
+'certifications.infrastructureexcellenceaward': 'جائزة التميز في البنية التحتية',
+'certifications.infrastructureexcellenceawardDesc': 'شهادة تقدير للهندسة المتفوقة وبناء مشروع جسر الطريق السريع I-95.',
+
+'certifications.industrialconstructionexcellence': 'التميز في البناء الصناعي',
+'certifications.industrialconstructionexcellenceDesc': 'اعتراف بالخدمات المتميزة في البناء الصناعي وإكمال مشروع توسعة المنشأة بنجاح.',
+
+'certifications.commercialdevelopmentaward': 'جائزة التطوير التجاري',
+'certifications.commercialdevelopmentawardDesc': 'شهادة تقدير للتصميم المبتكر وبناء مجمع مركز التسوق بميزات مستدامة.',
+
+'certifications.communityhousingexcellence': 'التميز في الإسكان المجتمعي',
+  'certifications.communityhousingexcellenceDesc': 'تقدير للالتزام البارز بالإسكان الميسور ومبادرات بناء المجتمع.',
+
+
+
+  // Certification Organizations
+  'certifications.organization.ManhattanPropertiesLLC': 'مانهاتن للعقارات ذ.م.م',
+'certifications.organization.ChicagoBusinessCenter': 'مركز شيكاغو للأعمال',
+'certifications.organization.FloridaDepartmentofTransportation': 'إدارة النقل بفلوريدا',
+'certifications.organization.AutoTechManufacturing': 'أوتوتك للتصنيع',
+'certifications.organization.PacificRetailGroup': 'مجموعة باسيفيك للبيع بالتجزئة',
+'certifications.organization.AustinHousingAuthority': 'هيئة الإسكان أوستن',
 
   }
 };
