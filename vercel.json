@@ -12,19 +12,29 @@
       "destination": "https://injoyweb.onrender.com/api/posts/:id/meta"
     },
     {
-      "source": "/posts/:id",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
-
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
   "build": {
     "env": {
       "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
     },
-  
     "command": "npm run build"
   },
-
   "outputDirectory": "dist",
   "framework": "vite"
 }
