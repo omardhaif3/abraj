@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { useTranslation } from '../hooks/useTranslation';
 import { Award, ExternalLink, Calendar, Building } from 'lucide-react';

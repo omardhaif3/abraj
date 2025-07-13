@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
-import { Instagram, Twitter, Linkedin, Facebook, Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaInstagram, FaTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
 import { FaFacebook, FaLinkedin, FaSnapchat, FaTiktok } from 'react-icons/fa';
 
 const Footer: React.FC = () => {

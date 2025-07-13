@@ -1,5 +1,5 @@
 // components/Background.jsx
-import React from 'react';
+
 import './Background.css'; // CSS file for wave styles
 
 const Background = () => {

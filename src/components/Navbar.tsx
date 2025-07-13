@@ -6,7 +6,7 @@ import TopBar from "./TopBar";
 import { useTranslation } from "../hooks/useTranslation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { styleEffect } from "framer-motion";
+
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
