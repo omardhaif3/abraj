@@ -95,7 +95,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             {project.client && (
               <div className="flex items-center">
-                <User className="w-5 h-5 text-[#007BFF] mr-3" />
+                <User className="w-5 h-5 text-[#007BFF] mx-3" />
                 <div>
                   <h4 className="font-semibold text-gray-800">{t('projects.client')}</h4>
                   <p className="text-gray-600">{project.client}</p>
@@ -104,7 +104,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
             )}
             
             <div className="flex items-center">
-              <MapPin className="w-5 h-5 text-[#007BFF] mr-3" />
+              <MapPin className="w-5 h-5 text-[#007BFF] mx-3" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('projects.location')}</h4>
                 <p className="text-gray-600">{project.location}</p>
@@ -112,7 +112,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
             </div>
             
             <div className="flex items-center">
-              <Calendar className="w-5 h-5 text-[#007BFF] mr-3" />
+              <Calendar className="w-5 h-5 text-[#007BFF] mx-3" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('projects.year')}</h4>
                 <p className="text-gray-600">{project.year}</p>
@@ -120,7 +120,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
             </div>
             
             <div className="flex items-center">
-              <Package className="w-5 h-5 text-[#007BFF] mr-3" />
+              <Package className="w-5 h-5 text-[#007BFF] mx-3" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('projects.category')}</h4>
                 <p className="text-gray-600">{t(`projects.filter${project.category}`)}</p>
@@ -173,7 +173,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-6 py-3 bg-[#00529B] text-white rounded-lg hover:bg-[#003366] transition-colors"
               >
-                <ExternalLink className="w-5 h-5 mr-2" />
+                <ExternalLink className="w-5 h-5 mx-2" />
                 {t('projects.visitSite')}
               </a>
             )}

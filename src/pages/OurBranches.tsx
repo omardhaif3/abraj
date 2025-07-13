@@ -55,7 +55,7 @@ const OurBranches = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center">
-              <MapPin className="w-12 h-12 mr-4" />
+              <MapPin className="w-12 h-12 mx-4" />
               {t('branches.title')}
             </h1>
             <p className="text-xl opacity-90 max-w-2xl mx-auto">

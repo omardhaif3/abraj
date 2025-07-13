@@ -72,7 +72,7 @@ const BranchDetail: React.FC<BranchDetailProps> = ({ branch, onClose }) => {
           
           <div className="space-y-4">
             <div className="flex items-start">
-              <MapPin className="w-5 h-5 text-[#007BFF] mr-3 mt-0.5 flex-shrink-0" />
+              <MapPin className="w-5 h-5 text-[#007BFF] mx-3 mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('branches.address')}</h4>
                 <p className="text-gray-600">{fullAddress}</p>
@@ -80,7 +80,7 @@ const BranchDetail: React.FC<BranchDetailProps> = ({ branch, onClose }) => {
             </div>
             
             <div className="flex items-center">
-              <Phone className="w-5 h-5 text-[#007BFF] mr-3 flex-shrink-0" />
+              <Phone className="w-5 h-5 text-[#007BFF] mx-3 flex-shrink-0" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('branches.phone')}</h4>
                 <a
@@ -93,7 +93,7 @@ const BranchDetail: React.FC<BranchDetailProps> = ({ branch, onClose }) => {
             </div>
             
             <div className="flex items-center">
-              <Mail className="w-5 h-5 text-[#007BFF] mr-3 flex-shrink-0" />
+              <Mail className="w-5 h-5 text-[#007BFF] mx-3 flex-shrink-0" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('branches.email')}</h4>
                 <a
@@ -106,7 +106,7 @@ const BranchDetail: React.FC<BranchDetailProps> = ({ branch, onClose }) => {
             </div>
             
             <div className="flex items-center">
-              <Clock className="w-5 h-5 text-[#007BFF] mr-3 flex-shrink-0" />
+              <Clock className="w-5 h-5 text-[#007BFF] mx-3 flex-shrink-0" />
               <div>
                 <h4 className="font-semibold text-gray-800">{t('branches.hours')}</h4>
                 <p className="text-gray-600">{branch.hours}</p>
@@ -121,14 +121,14 @@ const BranchDetail: React.FC<BranchDetailProps> = ({ branch, onClose }) => {
               rel="noopener noreferrer"
               className="flex items-center justify-center px-6 py-3 bg-[#00529B] text-white rounded-lg hover:bg-[#003366] transition-colors"
             >
-              <Navigation className="w-5 h-5 mr-2" />
+              <Navigation className="w-5 h-5 mx-2" />
               {t('branches.getDirections')}
             </a>
             <a
               href={`tel:${branch.phone}`}
               className="flex items-center justify-center px-6 py-3 bg-[#007BFF] text-white rounded-lg hover:bg-[#0056b3] transition-colors"
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-5 h-5 mx-2" />
               {t('branches.callNow')}
             </a>
           </div>

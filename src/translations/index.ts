@@ -275,6 +275,7 @@ const translations: Translations = {
   'certifications.organization.AutoTechManufacturing': 'AutoTech Manufacturing',
   'certifications.organization.PacificRetailGroup': 'Pacific Retail Group',
   'certifications.organization.AustinHousingAuthority': 'Austin Housing Authority',
+  'certifications.download': 'Download Certificate'
 
   },
   ar: {
@@ -554,6 +555,7 @@ const translations: Translations = {
 'certifications.organization.AutoTechManufacturing': 'أوتوتك للتصنيع',
 'certifications.organization.PacificRetailGroup': 'مجموعة باسيفيك للبيع بالتجزئة',
 'certifications.organization.AustinHousingAuthority': 'هيئة الإسكان أوستن',
+'certifications.download': 'تنزيل الشهادة'
 
   }
 };

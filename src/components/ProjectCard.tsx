@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             <p className="text-sm mb-3">{projectDescription}</p>
             <div className="flex items-center justify-center text-white">
               <span className="text-sm font-medium">{t('projects.viewProject')}</span>
-              <ExternalLink className="w-4 h-4 ml-1" />
+              <ExternalLink className="w-4 h-4 mx-1" />
             </div>
           </div>
         </div>
@@ -80,18 +80,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         <div className="space-y-2 text-gray-600 text-sm">
           {project.client && (
             <div className="flex items-center">
-              <User className="w-4 h-4 text-[#007BFF] mr-2" />
+              <User className="w-4 h-4 text-[#007BFF] mx-2" />
               <span>{t('projects.client')}: {project.client}</span>
             </div>
           )}
           
           <div className="flex items-center">
-            <MapPin className="w-4 h-4 text-[#007BFF] mr-2" />
+            <MapPin className="w-4 h-4 text-[#007BFF] mx-2" />
             <span>{t('projects.location')}: {project.location}</span>
           </div>
           
           <div className="flex items-center">
-            <Calendar className="w-4 h-4 text-[#007BFF] mr-2" />
+            <Calendar className="w-4 h-4 text-[#007BFF] mx-2" />
             <span>{t('projects.year')}: {project.year}</span>
           </div>
         </div>

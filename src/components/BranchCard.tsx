@@ -54,19 +54,19 @@ const BranchCard: React.FC<BranchCardProps> = ({ branch, onClick }) => {
         
         <div className="space-y-2 text-gray-600">
           <div className="flex items-start">
-            <MapPin className="w-4 h-4 text-[#007BFF] mr-2 mt-0.5 flex-shrink-0" />
+            <MapPin className="w-4 h-4 text-[#007BFF] mx-2 mt-0.5 flex-shrink-0" />
             <span className="text-sm">
               {branch.address}, {branch.city}, {branch.state} {branch.zip}
             </span>
           </div>
           
           <div className="flex items-center">
-            <Phone className="w-4 h-4 text-[#007BFF] mr-2 flex-shrink-0" />
+            <Phone className="w-4 h-4 text-[#007BFF] mx-2 flex-shrink-0" />
             <span className="text-sm">{branch.phone}</span>
           </div>
           
           <div className="flex items-center">
-            <Clock className="w-4 h-4 text-[#007BFF] mr-2 flex-shrink-0" />
+            <Clock className="w-4 h-4 text-[#007BFF] mx-2 flex-shrink-0" />
             <span className="text-sm">{branch.hours}</span>
           </div>
         </div>
@@ -77,7 +77,7 @@ const BranchCard: React.FC<BranchCardProps> = ({ branch, onClick }) => {
         
         <div className="mt-4 flex items-center text-[#007BFF] group-hover:text-[#00529B] transition-colors">
           <span className="text-sm font-medium">{t('branches.viewDetails')}</span>
-          <ExternalLink className="w-4 h-4 ml-1" />
+          <ExternalLink className="w-4 h-4 mx-1" />
         </div>
       </div>
     </motion.div>
