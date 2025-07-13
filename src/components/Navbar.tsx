@@ -331,6 +331,8 @@ const [openDropdownKey, setOpenDropdownKey] = useState<string | null>(null);
                                   isRTL ? "كلمة الرئيس" : "Chairman Message"
                                 ) : subItem.key === "nav.boardOfDirectors" ? (
                                   isRTL ? "مجلس الإدارة" : "Board of Directors"
+                                ) : subItem.key === "departments.title" ? (
+                                  isRTL ? "أقسامنا" : "Our Departments"
                                 ) : (
                                   subItem.label
                                 )}
