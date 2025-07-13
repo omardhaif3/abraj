@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { X } from "lucide-react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -15,6 +15,8 @@ const Navbar: React.FC = () => {
   const t = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const rtlSide = useMemo(() => isRTL, [isRTL]);
+
 
   const navItems = [
     { key: "nav.home", to: "/" },
@@ -66,8 +68,8 @@ const Navbar: React.FC = () => {
     : "bg-transparent";
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
-      {/* TopBar */}
+    <div className="absolute top-0 left-0 right-0 z-50">
+      {/* TopBar */}  
       <div className={`${navbarBg} transition-all duration-150`}>
         <TopBar />
       </div>
@@ -140,8 +142,19 @@ const Navbar: React.FC = () => {
       {isMenuOpen && <div className="fixed inset-0 z-40 bg-black/50" onClick={() => setIsMenuOpen(false)} />}
 
       {/* Mobile Menu */}
-      <div className={`fixed top-0 bottom-0 z-50 w-80 max-w-[85vw] transition-transform duration-200 ${isRTL ? "right-0" : "left-0"} ${isMenuOpen ? "translate-x-0" : isRTL ? "translate-x-full" : "-translate-x-full"}`}
-        style={{ background: "linear-gradient(to bottom, #3D4B9F, #5A63B0)" }}>
+<div
+  className={`fixed top-0 bottom-0 w-80 max-w-[85vw] transition-transform duration-300 ease-in-out
+    ${isRTL ? "right-0" : "left-0"}
+    ${isMenuOpen ? "translate-x-0 z-50 visible" : `${isRTL ? "translate-x-full" : "-translate-x-full"} invisible z-0`}
+  `}
+  style={{
+    background: "linear-gradient(to bottom, #3D4B9F, #5A63B0)",
+  }}
+>
+
+
+
+
         <div className="p-5 pt-16 h-full">
           <button onClick={() => setIsMenuOpen(false)} className={`absolute top-3 ${isRTL ? "left-3" : "right-3"} text-white p-1`}>
             <X size={24} />
