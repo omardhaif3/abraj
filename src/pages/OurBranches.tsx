@@ -85,21 +85,7 @@ const OurBranches = () => {
           </div>
         </motion.div>
 
-        {/* Interactive Map Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
-        >
-          <div className="bg-gradient-to-br from-[#E6F0FF] to-[#007BFF] rounded-lg h-96 flex items-center justify-center">
-            <div className="text-center text-[#00529B]">
-              <MapPin className="w-16 h-16 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">{t('branches.mapTitle')}</h3>
-              <p className="text-lg opacity-80">{t('branches.mapSubtitle')}</p>
-            </div>
-          </div>
-        </motion.div>
+       
 
         {/* Branch List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
