@@ -103,20 +103,15 @@ const Footer: React.FC = () => {
                 <a href="https://www.instagram.com/marketingabraj1/?igsh=NmZ6ZmVqdnB6aGhi#" className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors" aria-label="Instagram">
                   <FaInstagram size={20} />
                 </a>
-                <a
-  href="https://x.com/aalwatania40994?s=11"
-  className="p-2 bg-white bg-opacity-10 rounded-full hover:bg-blue-700 transition-colors"
-  aria-label="X (Twitter)"
-  target="_blank"
-  rel="noopener noreferrer"
->
+               <a href="https://x.com/aalwatania40994?s=11" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="p-2 rounded-full hover:bg-blue-700 transition-colors">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1200 1227"
+    className="w-[20px] h-[20px] cursor-pointer  text-[#999] hover:text-white transition-colors duration-200"
     fill="currentColor"
-    className="w-5 h-5"
   >
-    <path d="M714 658l486-658h-114l-389 527-309-527H0l509 862L37 1227h114l398-540 317 540h268L714 658z" />
+    <title>X</title>
+    <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
   </svg>
 </a>
 
